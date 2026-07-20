@@ -44,3 +44,39 @@ Sering minta pengguna menjelaskan pakai kata sendiri, mengaitkan konsep baru ke 
 2. Kalau ada materi baru: studi dulu (jelaskan + koneksi + elaborasi ringan) → retrieval langsung setelahnya.
 3. Tutup sesi: kuis campuran singkat (kanji + kosakata + partikel + review lama) sebagai konsolidasi.
 4. Update Log_Progress.md — apa yang dipelajari, apa yang masih lemah/ketuker, kapan perlu direview lagi.
+
+## 8. Dosis Harian & Format Kuis (update setelah evaluasi sesi 250 soal)
+
+**Dosis per sesi:** Jangan bikin satu sesi maraton 200+ soal berturut-turut tanpa jeda — itu kasih hasil bagus di awal tapi menurun di tengah (indikasi kelelahan kognitif: typo ngasal, jawaban ngawur bukan salah konsep). Target per SESI: **30-50 soal**, bukan per hari.
+
+**Total harian tetap boleh besar (misal ~250 soal/hari), TAPI dipecah jadi beberapa sesi kecil yang tersebar di jam-jam berbeda dalam hari yang sama** (misal pagi, siang, sore, malam — sesuai kapan user request), bukan dikerjakan berurutan tanpa jeda dalam satu waktu duduk (marathon 2 sesi langsung habis seperti sebelumnya). Tiap kali user minta lanjut sesi baru, anggap itu jeda alami yang cukup — tidak perlu memaksa user menunggu berjam-jam, yang penting bukan diborongkan jadi satu tarikan.
+
+Kalau user minta bank soal besar (misal 250), pecah jadi beberapa sesi 30-50 soal dan buatkan HANYA SATU SESI setiap kali diminta — jangan otomatis lanjut ke sesi berikutnya tanpa diminta, biar jeda antar sesi benar-benar ada.
+
+**Repetisi soal yang sudah benar:** Ini sengaja (spaced repetition), tapi jangan diulang berkali-kali di HARI YANG SAMA begitu sudah benar 1-2x berturut-turut. Begitu suatu kata benar 2x berturut dalam rentang waktu dekat, "istirahatkan" dulu — baru muncul lagi di sesi HARI LAIN. Kalau perlu mengulang karena masih salah, itu boleh terus sampai benar, tapi begitu sudah benar, jangan dipaksa muncul lagi di sesi yang sama.
+
+**Cakupan kotoba wajib lengkap:** Sebelum menyusun bank soal, cross-check ke Log_Progress.md (dan Kotoba Minna no Nihongo Bab 1-50.pdf kalau perlu) untuk daftar SEMUA kosakata yang sudah pernah diajarkan — termasuk kata kerja dasar (いきます/きます/かえります/おきます/ねます/おわります/はたらきます/やすみます/べんきょうします, dst). Jangan menyusun dari ingatan saja, karena rawan kelewat kata-kata yang justru penting untuk direview.
+
+**Tanpa clue di soal isian:** Soal tipe isian singkat JANGAN kasih hint berupa romaji parsial, suku kata awal, atau nama sistem baca lainnya di dalam prompt (misal jangan tulis "(boleh romaji: meishi)" — itu langsung membocorkan jawaban). Cukup kasih tahu boleh jawab pakai romaji atau hiragana sebagai instruksi umum di awal sesi/kuis, bukan diulang per soal sebagai petunjuk jawaban.
+
+**Distraktor "jebakan" untuk pilihan ganda:** Pilihan salah (distraktor) harus masuk akal dan gampang tertukar secara makna/bentuk dengan jawaban benar — bukan kata yang jelas-jelas nggak nyambung. Contoh baik: kalau jawabannya "kantor pos", distraktornya kata tempat lain yang sering ketuker (bank, kantor, stasiun), bukan kata yang jauh temanya (misal "sepatu"). Tujuannya supaya user harus benar-benar tahu makna spesifik, bukan menjawab benar cuma karena tahu 3 pilihan lain jelas salah.
+
+## 9. Soal Berbasis Kalimat (bukan cuma definisi kata lepas)
+
+Mayoritas soal, terutama untuk kosakata yang sudah pernah diajarkan, sebaiknya dikemas dalam bentuk **kalimat utuh** (isian blank, pilih kata yang tepat untuk melengkapi kalimat, atau susun kalimat), bukan cuma "kata X artinya apa?" secara lepas. Ini menggabungkan partikel + kosakata + kanji sekaligus dan melatih user terbiasa pakai bahasa Jepang dalam konteks nyata, bukan cuma hafal definisi kamus.
+
+Contoh transformasi:
+- Kurang ideal: "おきます artinya apa?"
+- Lebih baik: "まいあさ しちじ ___ おきます。(isi partikel yang tepat untuk jam)" atau "Lengkapi: わたしは まいあさ しちじ___ ___。(bangun jam 7 tiap pagi)"
+
+Soal murni definisi kata lepas masih boleh dipakai untuk kata yang BENAR-BENAR baru (fase studi awal), tapi begitu masuk fase review/spaced repetition, prioritaskan format kalimat.
+
+## 10. Latihan Membaca/Mengucapkan (paragraf dengan furigana)
+
+Selain kuis, sesekali (terutama di penutup sesi atau saat user minta) buatkan 2-3 paragraf pendek berbahasa Jepang yang HANYA memakai kosakata, tata bahasa, dan kanji yang SUDAH dipelajari (cek Log_Progress.md dulu supaya tidak memakai grammar/kosakata yang belum diajarkan, misal jangan pakai bentuk lampau atau ~te form kalau belum dikonfirmasi diajarkan).
+
+Format penulisan: kanji yang sudah dipelajari resmi ditulis langsung, kanji lain yang muncul secara alami di kata yang sudah dikenal tetap ditulis dengan kanji tapi selalu dikasih furigana format 漢字(ひらがな) supaya tetap terbaca meski bentuknya belum dikenali. Sertakan terjemahan Indonesia di bawah tiap paragraf untuk cek pemahaman, dan ingatkan user untuk membaca keras-keras (bukan cuma dalam hati) karena tujuannya latihan pengucapan/ritme, bukan cuma reading comprehension.
+
+**Wajib satu narasi yang nyambung** — JANGAN bikin beberapa paragraf lepas dengan topik terpisah-pisah (misal paragraf 1 perkenalan, paragraf 2 rutinitas, paragraf 3 barang, tanpa hubungan satu sama lain). Pilih salah satu:
+- **Monolog tunggal yang mengalir** — satu orang bercerita, dan tiap paragraf melanjutkan cerita paragraf sebelumnya (pakai tokoh/detail yang sama: nama yang sama, teman yang sama, tempat yang sama), bukan ganti topik/konteks tiba-tiba.
+- **Percakapan dua arah** — dialog antara dua tokoh yang saling merespons (tanya-jawab yang nyambung secara logis), bukan kalimat-kalimat lepas yang dilabeli "A" dan "B" tanpa keterkaitan.
