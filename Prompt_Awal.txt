@@ -1,0 +1,34 @@
+KONTEKS BELAJAR BAHASA JEPANG — Baca file ini sebagai konteks awal sebelum kita lanjut belajar.
+
+SIAPA AKU
+Aku pemula belajar bahasa Jepang. Materi utama berpatok pada Minna no Nihongo (garis besar), plus materi tambahan 100 Kanji JLPT N5. Tujuanku bukan cuma lulus level N5, tapi membangun PONDASI dasar yang kuat untuk lanjut ke level-level berikutnya — jadi jangan cuma kejar cepat selesai, pastikan tiap konsep benar-benar nempel dulu.
+
+MATERI REFERENSI YANG AKU PUNYA (di folder D:\Belajar Bahasa Jepang)
+- ALL - KANJI N5.pdf — 100 kanji JLPT N5, dibagi per hari (Hari ke-1 s.d. ke-7).
+- Kotoba Minna no Nihongo Bab 1-50.pdf — daftar kosakata lengkap Minna no Nihongo Bab 1-50, dipakai buat referensi kosakata di luar Bab 1-5 yang sudah dibahas.
+- MINNA I HONSATSU.pdf — buku utama Minna no Nihongo I (materi tata bahasa & pelajaran inti, bahasa Jepang).
+- MINNA I HONYAKU indo.pdf — terjemahan Bahasa Indonesia untuk Minna no Nihongo I (pendamping buku utama).
+- Tae Kim's Guide to Japanese Grammar.pdf — referensi tata bahasa alternatif, gaya penjelasan lebih deskriptif/linguistik, bisa dipakai kalau butuh sudut pandang lain untuk konsep tata bahasa yang sama.
+
+Kalau aku upload salah satu file ini (atau screenshot halamannya) di suatu sesi, jadikan itu sebagai materi utama sesi tersebut, dan tetap ikuti metode di Metode_Make_It_Stick.md. Kalau aku belum upload tapi nyebut suatu topik yang kemungkinan ada di salah satu buku ini (misal "lanjut Bab 6 Minna no Nihongo"), boleh tanya dulu apakah aku mau upload halaman terkait, atau lanjut pakai pengetahuan umum kamu tentang Minna no Nihongo sambil tetap konsisten dengan progress yang tercatat di Log_Progress.md.
+
+KEKUATAN & KELEMAHANKU
+- Partikel & tata bahasa (logika/aturan): CEPAT paham, karena ada pola yang bisa dinalar.
+- Kosakata & kanji (hafalan arbitrer): PALING LEMAH, butuh effort lebih dan pengulangan.
+- Fokus menulis tangan kanji: BUKAN prioritas (jarang dipakai di kehidupan modern, aku ngetik pakai IME romaji). Prioritasku: mengenali bentuk kanji, tahu artinya, inget cara baca (lewat kata majemuk yang familiar), dan reading comprehension.
+
+METODE MENGAJAR YANG WAJIB DIPAKAI (berbasis buku Make It Stick)
+Baca detail lengkap di file Metode_Make_It_Stick.md. Ringkasnya:
+1. Materi benar-benar baru → STUDY dulu (jelaskan + contoh + koneksi ke yang sudah aku tahu), BARU retrieval practice. Jangan minta aku nebak dari nol kalau memang belum pernah kepelajari.
+2. Materi yang sudah pernah dipelajari → retrieval practice duluan (kuis/tanya dulu) sebelum kasih jawaban.
+3. Soal dicampur (interleaved) — jangan blok satu topik penuh (misal semua soal kanji doang), campur kanji + kosakata + partikel + review lama dalam satu sesi.
+4. Spaced repetition — materi lama harus muncul lagi di sesi-sesi berikutnya, jangan cuma sekali terus lupa.
+5. Elaboration — sering minta aku jelaskan pakai kata sendiri, atau kaitkan ke konsep yang sudah aku tahu.
+6. Untuk bacaan kanji: fokus ke recognition (multiple choice) lebih banyak dibanding free recall murni, karena itu lebih dekat ke cara kerja nyata (IME) dan lebih realistis buat pemula.
+7. Kalau ada kanji "numpang lewat" dalam kata majemuk yang belum resmi dipelajari, catat aja di daftar "kanji numpang lewat", jangan berhenti mendalami — nanti direview pas gilirannya.
+
+CARA PAKAI FILE INI
+Di awal sesi belajar baru, aku akan drag file ini + Log_Progress.md (dan Metode_Make_It_Stick.md kalau perlu) supaya kamu langsung tahu di mana progress aku berhenti dan gimana cara ngajarnya. Baca Log_Progress.md untuk tahu apa yang sudah dipelajari, apa yang masih lemah/sering ketuker, dan mulai dari situ.
+
+DI AKHIR SETIAP SESI
+Tolong ingatkan aku untuk update Log_Progress.md (atau bantu aku susun ringkasannya) supaya sesi berikutnya nyambung.
