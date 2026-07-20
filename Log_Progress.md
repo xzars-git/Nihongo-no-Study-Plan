@@ -88,6 +88,17 @@ Update file ini di akhir tiap sesi. Struktur: tanggal sesi → apa yang dipelaja
 
 ---
 
+## Les Formal (5x/minggu, ~3 jam/sesi, panduan Minna no Nihongo — target N3 Juli 2027)
+
+Les JUGA pakai Minna no Nihongo, jadi progress les = progress di bagian atas Log ini, SATU jalur (bukan terpisah). Kelas berfungsi sebagai trigger/anchor harian; penyerapan mendalam terjadi lewat sesi mandiri di sini. Kalau les sudah lanjut ke bab tertentu, update "Ringkasan Status Terkini" di atas supaya tetap sinkron. Kosakata dari kelas yang kurang relevan ke konteks kerja (developer/engineer) tetap diajarkan tapi prioritas review lebih rendah.
+
+**Target milestone dari user (bukan estimasi umum, ini target pribadi):**
+- N5 → N4: 6 bulan (target sekitar Januari 2027)
+- N4 → N3: 6 bulan berikutnya (target Juli 2027, sesuai jadwal ujian JLPT)
+- Progress saat ini (Juli 2026): baru Bab 1-5 MNN dari total ~25 bab MNN I (area N5) — jadi milestone N4 di bulan ke-6 berarti perlu menuntaskan sisa MNN I + sebagian MNN II dalam waktu tersebut. Ini di ujung "intensif" dari estimasi riset (300-450 jam total biasanya 6-12 bulan kalau 3-5 jam/hari) — ketat tapi bukan mustahil mengingat sudah ada 3 jam/hari kelas + sesi mandiri.
+
+---
+
 ## Catatan Perubahan Metode (setelah evaluasi kuis 250 soal)
 
 Metode_Make_It_Stick.md diupdate dengan poin baru: dosis kuis dibatasi 30-50 soal/sesi/hari (bukan borongan besar dalam satu hari), soal isian tanpa clue romaji, distraktor pilihan ganda dibuat mengecoh, soal diarahkan ke format kalimat (bukan definisi kata lepas) supaya partikel ikut terlatih, cakupan kotoba wajib cross-check ke log dulu, dan tambahan latihan baca/ucap paragraf berfurigana. Baca Metode_Make_It_Stick.md poin 8-10 untuk detail lengkap.

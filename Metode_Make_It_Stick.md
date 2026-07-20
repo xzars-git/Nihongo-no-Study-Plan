@@ -71,6 +71,17 @@ Contoh transformasi:
 
 Soal murni definisi kata lepas masih boleh dipakai untuk kata yang BENAR-BENAR baru (fase studi awal), tapi begitu masuk fase review/spaced repetition, prioritaskan format kalimat.
 
+## 10.5 Sinkronisasi dengan Les Formal (5x/minggu, ~3 jam/sesi, panduan Minna no Nihongo)
+
+Konteks: user ikut les bahasa Jepang 5x/minggu (~3 jam/sesi) menuju target JLPT N3 (Juli 2027), tujuan akhir kerja di Jepang sebagai mobile developer lewat jalur visa engineer. Lesnya JUGA pakai Minna no Nihongo sebagai panduan (sama dengan yang kita pakai), jadi progress les dan progress mandiri ini SATU JALUR, bukan dua jalur terpisah — tetap sinkron dengan Log_Progress.md.
+
+**Kenapa user kadang "AFK" di kelas:** bukan karena nggak belajar, tapi karena sensei kadang masukin materi tambahan yang kurang relevan buat kebutuhan user (misal kosakata profesi seperti けんきゅうしゃ/peneliti — kurang nyambung buat konteks kerja sebagai mobile developer). Kelas berfungsi sebagai **trigger/anchor harian** (pemicu rutinitas belajar tiap hari), sementara penyerapan materi yang lebih dalam & sesuai kebutuhan user terjadi lewat framework mandiri ini.
+
+**Aturan kerja:**
+- Progress les dan progress mandiri di sini dianggap SATU progress Minna no Nihongo yang sama — kalau les sudah lanjut ke bab tertentu, update Log_Progress.md supaya sinkron, jangan bikin dua pencatatan terpisah.
+- Kalau ada kosakata/materi dari les yang terasa kurang relevan ke konteks kerja user (developer/engineer), tetap diajarkan (karena tetap keluar di ujian JLPT), tapi beri prioritas lebih rendah dalam bobot spaced repetition dibanding kosakata yang lebih relevan ke kebutuhan sehari-hari/kerja.
+- Manfaatkan sesi harian dengan framework ini (kuis, latihan kalimat, baca/ucap) sebagai cara mengubah waktu duduk 3 jam di kelas jadi lebih produktif — begitu ada bab/topik baru dari kelas, retrieval-kan segera di sini selagi masih segar.
+
 ## 10. Latihan Membaca/Mengucapkan (paragraf dengan furigana)
 
 Selain kuis, sesekali (terutama di penutup sesi atau saat user minta) buatkan 2-3 paragraf pendek berbahasa Jepang yang HANYA memakai kosakata, tata bahasa, dan kanji yang SUDAH dipelajari (cek Log_Progress.md dulu supaya tidak memakai grammar/kosakata yang belum diajarkan, misal jangan pakai bentuk lampau atau ~te form kalau belum dikonfirmasi diajarkan).
