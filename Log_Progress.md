@@ -75,16 +75,27 @@ Update file ini di akhir tiap sesi. Struktur: tanggal sesi → apa yang dipelaja
 - Kata paling bermasalah: りょうしん (orang tua) — salah berulang kali meski sudah diberi mnemonic dan direview 4x. Ini prioritas utama sesi depan.
 - Tool baru: widget kuis interaktif dengan skor otomatis dan tombol kirim hasil ke chat, mendukung input romaji (dikonversi otomatis ke hiragana) untuk soal isian karena user tidak punya keyboard Jepang.
 
+### Sesi 4 (evaluasi metode + metode diupdate + sesi pagi berbasis kalimat)
+- User evaluasi metode kuis 250 soal: minta dosis dipecah per sesi (30-50 soal, bukan maraton), tanpa clue di soal isian, distraktor MC lebih mengecoh, soal diarahkan ke format kalimat (bukan definisi lepas) supaya partikel ikut terlatih, cakupan kotoba wajib cross-check ke log dulu. Metode_Make_It_Stick.md diupdate (poin 8-9).
+- Ditambahkan latihan baca/ucap: paragraf berfurigana yang membentuk satu narasi/monolog yang nyambung (bukan paragraf lepas-lepas) — metode poin 10.
+- Diskusi proyeksi belajar 1 tahun: target pribadi user N5→N4 dalam 6 bulan (~Jan 2027), N4→N3 6 bulan berikutnya (Juli 2027, sesuai target JLPT). Les 5x/minggu (~3jam) JUGA pakai Minna no Nihongo (satu jalur dengan progress di log ini), berfungsi sebagai trigger/anchor harian karena user kadang kurang selaras dengan gaya mengajar sensei — metode poin 10.5.
+- Ditemukan masalah: soal berbasis kalimat kadang pakai kata/grammar di luar cakupan yang sudah diajarkan (bikin bingung). Metode diupdate lagi: soal kalimat wajib sertakan glosarium kata baru di bawah soal kalau perlu (poin 9 tambahan).
+- Sesi pagi (kuis 32 soal, versi revisi sesuai metode baru): skor 26/33 (~79%). Beberapa error murni pola kalimat/logika (bukan salah kosakata): salah hitung おととい (arah mundur hari), salah paham konteks あいさつ selesai kelas vs awal kenalan, salah baca pilihan ganda (じてんしゃ/あるいて). User sendiri menilai format soal begini positif — "kadang ngga paham pertanyaannya, tapi itu bagus buat mikir".
+- **Masalah berulang (3x sekarang):** konsep 父/お母さん (dan pasangannya) masih sering kebalik — kali ini soal "お母さん dipakai untuk cerita soal ibu sendiri ke orang lain" dijawab Benar (harusnya Salah, karena situasi itu pakai 母 bukan お母さん). Perlu pendekatan penjelasan yang beda karena repetisi soal aja belum berhasil.
+- **Masalah berulang lain:** まいばん vs まいにち sempat dikira sinonim (padahal maiban = tiap malam saja, mainichi = tiap hari).
+
 ---
 
 ## Rencana Sesi Berikutnya
 
-- [ ] Review intensif khusus りょうしん (orang tua) sampai benar-benar nempel — prioritas utama, sudah salah 4x.
-- [ ] Review ringan pasangan kata yang masih ketuker: エレベーター/エスカレーター, せんげつ/こんげつ/らいげつ, ちかてつ/でんしゃ, きょうだい/がっこうともだち, けんきゅうしゃ (ejaan ん di tengah), てちょう/とけい, 母/姉.
-- [ ] Konfirmasi ulang pemahaman 父/お父さん dan 母/おかあさん (beda kesopanan, bukan beda arti) — pastikan benar-benar dipahami, bukan cuma hafal jawaban.
-- [ ] Retrieval test resmi untuk kanji Hari 1 kelompok 2 (女子友父母名) secara terpisah/lebih fokus (sejauh ini baru ikut campur di kuis 250 soal).
+- [ ] **Prioritas utama:** 父/お父さん, 母/お母さん — sudah salah 3x dengan pola sama. Coba pendekatan beda dari sekadar diulang: mungkin tabel visual, analogi lain, atau minta user jelasin balik pakai kata sendiri (elaboration) daripada cuma dikasih soal lagi.
+- [ ] Review まいばん vs まいにち (baru sekali salah, tapi tandai supaya di-spaced lagi).
+- [ ] Review ringan sisa pasangan kata yang masih ketuker: エレベーター/エスカレーター, せんげつ/こんげつ/らいげつ, ちかてつ/でんしゃ, きょうだい/がっこうともだち, けんきゅうしゃ (ejaan ん di tengah), てちょう/とけい, 母/姉, りょうしん.
+- [ ] Latih logika kalimat/soal cerita (bukan cuma kosakata) — beberapa salah kemarin murni salah baca/logika (hitung hari mundur, konteks salam), bukan salah arti kata.
+- [ ] Retrieval test resmi untuk kanji Hari 1 kelompok 2 (女子友父母名) secara terpisah/lebih fokus.
 - [ ] Kalau semua di atas sudah solid, lanjut ke kanji Hari 1 kelompok 3 dan/atau mulai Bab 6 Minna no Nihongo.
-- [ ] Lanjutkan latihan baca/ucap paragraf furigana (metode baru poin 10) secara berkala.
+- [ ] Lanjutkan latihan baca/ucap paragraf furigana (satu narasi nyambung, metode poin 10) secara berkala.
+- [ ] Ingat: sesi harus tetap 30-50 soal, tersebar di jam berbeda kalau user mau lanjut hari yang sama (metode poin 8) — jangan diborongkan.
 
 ---
 
