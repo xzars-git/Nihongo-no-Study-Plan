@@ -71,10 +71,11 @@ Contoh transformasi:
 
 Soal murni definisi kata lepas masih boleh dipakai untuk kata yang BENAR-BENAR baru (fase studi awal), tapi begitu masuk fase review/spaced repetition, prioritaskan format kalimat.
 
-**Glosarium kata di luar cakupan:** Kadang kalimat butuh kata/grammar yang belum resmi diajarkan supaya kalimatnya natural (misal います/あります, おおぜい, dsb). JANGAN hindari ini sepenuhnya karena bikin kalimat jadi kaku, TAPI setiap kali sebuah soal memakai kata/pola di luar yang sudah tercatat di Log_Progress.md, WAJIB sertakan glosarium singkat di bawah kalimat soal (format: "Kata baru: きます = X, おおぜい = Y") supaya:
-1. User tetap bisa mengerjakan soal tanpa bingung kata mana yang harus dijawab vs kata pendukung konteks.
-2. Kata-kata baru itu jadi exposure pasif tambahan (bonus vocabulary), bukan penghalang.
-Jangan glosariumkan kata yang jadi FOKUS/JAWABAN soal itu sendiri (itu tetap harus ditebak), hanya kata-kata pendukung di sekitarnya yang di luar cakupan resmi.
+**Glosarium kata di luar cakupan (WAJIB, cek per-kata, bukan cuma yang "kelihatan" baru):** Kadang kalimat butuh kata/grammar yang belum resmi diajarkan supaya kalimatnya natural (misal います/あります, おおぜい, いう, dsb — termasuk kata kecil/partikel gramatikal seperti ~という, bukan cuma kata benda). JANGAN hindari ini sepenuhnya karena bikin kalimat jadi kaku, TAPI setiap kali sebuah soal memakai kata/pola di luar yang sudah tercatat di Log_Progress.md, WAJIB sertakan glosarium di bawah kalimat soal.
+
+**Cara cek supaya tidak kelewat:** Sebelum menampilkan soal kalimat, telusuri SETIAP kata dalam kalimat satu per satu (termasuk kata kerja bantu, partikel tidak umum, kata sambung seperti という/いう) dan cocokkan ke daftar yang sudah diajarkan di Log_Progress.md. Kalau ragu apakah suatu kata sudah diajarkan atau belum, ANGGAP BELUM dan masukkan ke glosarium — lebih aman over-glossary daripada bikin user salah konteks karena satu kata kecil kelewat (misal partikel/verba seperti いう yang gampang keanggep "kecil jadi nggak perlu dijelasin", padahal itu yang bikin bingung).
+
+Format: "Kata baru: きます = X, おおぜい = Y, いう = Z". Jangan glosariumkan kata yang jadi FOKUS/JAWABAN soal itu sendiri (itu tetap harus ditebak), hanya kata-kata pendukung di sekitarnya yang di luar cakupan resmi.
 
 ## 10.5 Sinkronisasi dengan Les Formal (5x/minggu, ~3 jam/sesi, panduan Minna no Nihongo)
 
