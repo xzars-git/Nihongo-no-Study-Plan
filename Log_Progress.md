@@ -84,16 +84,39 @@ Update file ini di akhir tiap sesi. Struktur: tanggal sesi → apa yang dipelaja
 - **Masalah berulang (3x sekarang):** konsep 父/お母さん (dan pasangannya) masih sering kebalik — kali ini soal "お母さん dipakai untuk cerita soal ibu sendiri ke orang lain" dijawab Benar (harusnya Salah, karena situasi itu pakai 母 bukan お母さん). Perlu pendekatan penjelasan yang beda karena repetisi soal aja belum berhasil.
 - **Masalah berulang lain:** まいばん vs まいにち sempat dikira sinonim (padahal maiban = tiap malam saja, mainichi = tiap hari).
 
+### Sesi 5 (retrieval kanji kelompok 2 fokus + review pasangan lemah + vocab list resmi dari user)
+- Retrieval khusus kanji Hari 1 kelompok 2: user awalnya kurang pede di 友/名/女 — dikasih mnemonic bentuk (友=gandengan tangan, 名=夕+口 manggil nama di malam gelap, 女=orang duduk anggun), lalu retrieval ulang dengan kalimat: 12/15 (2 salah karena soal ambigu/salah desain, bukan salah user — dicatat sebagai pelajaran buat hati-hati bikin konteks kalimat yang cuma punya 1 jawaban valid).
+- Sesi review pasangan kata lemah (28 soal, format kalimat + glosarium): mencakup りょうしん, エレベーター/エスカレーター, せんげつ/こんげつ, ちかてつ/でんしゃ, きょうだい, けんきゅうしゃ, てちょう/とけい, 母/姉, まいばん/まいにち, plus latihan logika kalimat (hitung mundur hari/jam).
+- **User memberikan vocab list resmi lengkap Minna no Nihongo I Bab 1-5** (dari textbook, bukan cuma dari ingatan Claude) — ini jadi rujukan utama untuk cross-check cakupan kotoba ke depan, lebih akurat dari sebelumnya. Catatan penting: buku pakai じどうしゃ (自動車) untuk "mobil", bukan くるま yang dipakai di kuis-kuis awal kita (くるま tetap benar secara umum, tapi じどうしゃ istilah resmi bab ini).
+- Review ringan (20 soal) khusus kata-kata dari vocab list resmi yang BELUM PERNAH dites: かれ/かのじょ, かぞく, たんじょうび, tanggal iregular (ついたち/ふつか/はつか dst), jenis kereta (ふつう/きゅうこう/とっきゅう), つぎの, angka besar (ひゃく/せん/まん), へや, うち/かいしゃ, じどうしゃ, どなた/おいくつ, からきました, ばんごう/なんばん, ひる/よる/ばん. Skor 16/20.
+- Kata yang masih salah (baru pertama kali dites, wajar): jenis kereta (ふつう/きゅうこう/とっきゅう urutan kecepatan), つぎの, じどうしゃ, ばんごう/なんばん (ketuker sama いくら).
+- Konteks: user ada tes (nggak terlalu high-stakes menurutnya) — sesi ini sengaja dibikin ringan/santai sesuai request.
+
+### Sesi 6 (review ringan lanjutan, vocab gap dari list resmi)
+- Review ringan ke-2 (22 soal): わたしたち, あの方, みなさん, ちゃん/くん, しゃいん/ぎんこういん, テープレコーダー, ネクタイ, ワイン/たばこ, angka ribuan (さんぜんえん dst), ばんごう, とっきゅう, plus spaced review 父/名/りょうしん/エレベーター/ちかてつ/けんきゅうしゃ/まいばん/じどうしゃ/つぎの/どなた. Skor 19/22.
+- Salah: みなさん (nuansa "anda semua" vs "semua orang di sana"), テープレコーダー (kurang lengkap dieja), さんびゃく(300) vs さんぜん(3.000) ketuker (ひゃく vs せん).
+
+### Sesi 7 (sesi review 30 soal campuran + evaluasi kualitas soal)
+- 30 soal review campuran (kotoba+kanji+waktu+partikel, format kalimat+glosarium): skor 22/30, TAPI 4 dari 8 kesalahan disebabkan soal Claude yang cacat/ambigu, bukan kekurangan user: (1) soal lift/tangga bawa banyak barang - jawabannya ambigu, (2) soal "7-8 pagi ngapain" minta nebak kata じゅんびします yang belum pernah diajarkan sama sekali (melanggar aturan glosarium kita sendiri), (3) soal "kereta nggak ada jadi ___" logikanya ambigu, (4) soal きょねん/らいねん ada bug jawaban (sudah diperingatkan duluan ke user).
+- **Pelajaran penting untuk Claude ke depan:** JANGAN bikin soal yang jawabannya mengharuskan menebak kata yang belum diajarkan (walau dari logika) — itu melanggar prinsip glosarium sendiri. Soal logika/cerita harus dicek ulang supaya cuma ada SATU jawaban valid, tidak ambigu.
+- Kesalahan yang genuinely masih jadi gap: エレベーター vs エスカレーター (ketuker lagi, ini sudah beberapa kali) — dikasih mnemonic baru: keduanya loanword langsung dari bahasa Inggris "elevator"/"escalator", pakai itu sebagai jangkar. うち vs かいしゃ (kemungkinan cuma kebaca buru-buru). まいつき vs まいげつ (info baru: 毎月 punya 2 bacaan sah, artinya sama — bukan salah paham, cuma belum pernah tahu).
+
+---
+
+## Vocab Resmi Minna no Nihongo I Bab 1-5 (dari user, referensi utama)
+
+User sudah kasih daftar lengkap dari textbook asli. Kata-kata dari Bab 1-5 yang TERCATAT ADA di buku tapi BELUM/JARANG dites di kuis kita (per Sesi 5): わたしたち, あなた, あの人/あの方, みなさん, 〜さん/ちゃん/くん, しゃいん, ぎんこういん, country names (アメリカ/インドネシア/中国 dst), カード, テープ, テープレコーダー, ネクタイ, ワイン, たばこ, 〜円, けさ done, 番号/何番, バンコク/ペキン/ロンドン dst (nama kota), ふつう/きゅうこう/とっきゅう, 〜番線. Kalau masih ada waktu di sesi-sesi depan, kata-kata ini bisa jadi materi tambahan ringan.
+
 ---
 
 ## Rencana Sesi Berikutnya
 
-- [ ] **Prioritas utama:** 父/お父さん, 母/お母さん — sudah salah 3x dengan pola sama. Coba pendekatan beda dari sekadar diulang: mungkin tabel visual, analogi lain, atau minta user jelasin balik pakai kata sendiri (elaboration) daripada cuma dikasih soal lagi.
-- [ ] Review まいばん vs まいにち (baru sekali salah, tapi tandai supaya di-spaced lagi).
-- [ ] Review ringan sisa pasangan kata yang masih ketuker: エレベーター/エスカレーター, せんげつ/こんげつ/らいげつ, ちかてつ/でんしゃ, きょうだい/がっこうともだち, けんきゅうしゃ (ejaan ん di tengah), てちょう/とけい, 母/姉, りょうしん.
-- [ ] Latih logika kalimat/soal cerita (bukan cuma kosakata) — beberapa salah kemarin murni salah baca/logika (hitung hari mundur, konteks salam), bukan salah arti kata.
-- [ ] Retrieval test resmi untuk kanji Hari 1 kelompok 2 (女子友父母名) secara terpisah/lebih fokus.
-- [ ] Kalau semua di atas sudah solid, lanjut ke kanji Hari 1 kelompok 3 dan/atau mulai Bab 6 Minna no Nihongo.
+- [ ] **FOKUS BARU (permintaan user):** kosakata WAKTU — kumpulkan dan perdalam SEMUA kosakata waktu dari Bab 1-5: jam (〜じ/〜ふん/はん/ごぜん/ごご), hari (きのう/きょう/あした/あさって/おととい), minggu (せんしゅう/こんしゅう/らいしゅう/さらいしゅう/せんせんしゅう), bulan (せんげつ/こんげつ/らいげつ, dan bacaan まいつき/まいげつ), tahun (きょねん/ことし/らいねん/おととし/さらいねん — ingat きょねん iregular), hari dalam seminggu (げつようび dst), bagian hari (あさ/ひる/よる/ばん), tanggal iregular (ついたち/ふつか/みっか/よっか/いつか/むいか/なのか/ようか/ここのか/とおか/はつか/じゅうよっか/にじゅうよっか), dan frekuensi (まいあさ/まいばん/まいにち/まいしゅう/まいつき/まいとし).
+- [ ] Elevator vs eskalator masih ketuker berkali-kali — pakai anchor loanword Inggris (elevator/escalator) di sesi berikutnya, cek apakah sudah membantu.
+- [ ] りょうしん sudah jauh lebih stabil (lolos beberapa kali terakhir), 父/お父さん dan 母/お母さん juga sudah jauh membaik — turunkan prioritas review tapi tetap sesekali muncul (spaced, jangan dihapus total).
+- [ ] **Catatan kualitas soal untuk Claude:** hindari bikin soal logika/cerita yang jawabannya makan kata di luar cakupan atau ambigu (lihat evaluasi Sesi 7) — selalu cek ulang tiap soal cuma py 1 jawaban valid sebelum ditampilkan.
+- [ ] Retrieval test resmi untuk kanji Hari 1 kelompok 2 (女子友父母名) sudah dilakukan (Sesi 5), termasuk 友/名/女 yang sempat kurang pede — sudah membaik dengan mnemonic bentuk kanji.
+- [ ] Kalau kosakata waktu sudah solid, lanjut ke kanji Hari 1 kelompok 3 dan/atau mulai Bab 6 Minna no Nihongo — user perlu upload halaman kanji Hari 2 kalau mau lanjut (Claude belum bisa buka PDF kanji langsung).
 - [ ] Lanjutkan latihan baca/ucap paragraf furigana (satu narasi nyambung, metode poin 10) secara berkala.
 - [ ] Ingat: sesi harus tetap 30-50 soal, tersebar di jam berbeda kalau user mau lanjut hari yang sama (metode poin 8) — jangan diborongkan.
 
