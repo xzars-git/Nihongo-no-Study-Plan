@@ -77,6 +77,12 @@ Soal murni definisi kata lepas masih boleh dipakai untuk kata yang BENAR-BENAR b
 
 Format: "Kata baru: きます = X, おおぜい = Y, いう = Z". Jangan glosariumkan kata yang jadi FOKUS/JAWABAN soal itu sendiri (itu tetap harus ditebak), hanya kata-kata pendukung di sekitarnya yang di luar cakupan resmi.
 
+## 10.6 Temuan: Narasi/Dialog Kontekstual untuk Pasangan Kata yang Susah Nempel
+
+Ditemukan di Bab 6: pasangan kata yang tetap tertukar meski sudah diulang berkali-kali lewat kuis definisi/kontras (かきます/ききます, よみます/みます) langsung membaik drastis setelah dipakai dalam dialog/narasi panjang yang kontekstual (poin 10) — dari sering salah jadi benar semua di retest berikutnya.
+
+**Implikasi:** kalau suatu pasangan kata sudah gagal nempel setelah 2-3 kali direview lewat kuis biasa, JANGAN cuma diulang kuis lagi — coba masukkan ke dalam narasi/dialog panjang dulu (poin 10) sebagai exposure kontekstual, baru retest. Konteks kalimat nyata membantu otak membedakan makna lewat penggunaan, bukan cuma definisi hafalan.
+
 ## 10.5 Sinkronisasi dengan Les Formal (5x/minggu, ~3 jam/sesi, panduan Minna no Nihongo)
 
 Konteks: user ikut les bahasa Jepang 5x/minggu (~3 jam/sesi) menuju target JLPT N3 (Juli 2027), tujuan akhir kerja di Jepang sebagai mobile developer lewat jalur visa engineer. Lesnya JUGA pakai Minna no Nihongo sebagai panduan (sama dengan yang kita pakai), jadi progress les dan progress mandiri ini SATU JALUR, bukan dua jalur terpisah — tetap sinkron dengan Log_Progress.md.

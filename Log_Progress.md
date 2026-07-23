@@ -103,6 +103,45 @@ Update file ini di akhir tiap sesi. Struktur: tanggal sesi → apa yang dipelaja
 
 ---
 
+### Sesi 8 (malam, fokus kosakata WAKTU komprehensif — user minta 100 soal meski sudah diperingatkan)
+- User upload tabel waktu 過去/今/未来 (日/週/月/年/朝/夜) + minta test komprehensif waktu+angka+tanggal+bulan+tahun (38 soal): skor 28/38. Gap besar: SELURUH baris 朝/夜 (けさ/さくや/みょうちょう/みょうばん) — baru pertama kali dites sedalam ini, semua salah. Bulan iregular (4月/9月) juga baru pertama kali kena.
+- User minta lanjut 100 soal sebelum tidur. Claude sempat mengingatkan risiko kelelahan/melanggar aturan dosis 30-50/sesi (total sudah 160+ soal hari itu), user tetap milih 100 — dihormati, tapi disusun supaya se-efektif mungkin: 30 soal drill intensif baris 朝/夜, 12 soal bulan iregular, 12 soal tanggal iregular, 16 soal arah せん/らい/さらい/おと, 10 soal angka+tahun, sisanya review interleaved kanji/kotoba/partikel yang sudah kuat.
+- Hasil: 75/96 (user berhenti sendiri di soal 96, keputusan bagus). Pola error jelas terbagi 2: (a) gap konsep asli — せんせんげつ arah masih ketuker (2x), 昨(saku) di さくや sempat dikira 'besok', beberapa bulan/tanggal iregular; (b) kelelahan kognitif jelas — jawaban ngaco/berulang (はつか dipakai berkali-kali buat tanggal lain, kata yang nggak ada artinya) muncul di paruh akhir sesi, tanda otak sudah capek bukan nggak paham.
+- **Pelajaran metode:** perlu tambahan aturan eksplisit — kalau user minta sesi jauh di atas 50 soal meski sudah diperingatkan, tetap boleh dituruti (otonomi user), tapi WAJIB susun dengan blok-blok terarah (bukan random) dan ingatkan mereka boleh berhenti kapan saja tanpa harus "menyelesaikan" semuanya.
+- Baris 朝/夜 setelah drill 30 soal SUDAH membaik signifikan dibanding tes awal (28/38 → sebagian besar 朝/夜 di 30 soal awal drill sudah benar), tapi せんせんげつ dan beberapa tanggal masih perlu direview lagi lain hari (bukan malam ini).
+
+---
+
+### Sesi 9 (pagi, final review komprehensif Bab 1-5)
+- Kuis final review 67 soal (kanji 12 lengkap, waktu komprehensif, kotoba tiap bab, partikel, TF konsep): skor 60/67 (~90%) — signifikan lebih baik dari sesi malam sebelumnya (78%), otak sudah fresh.
+- **Status Bab 1-5 secara keseluruhan: SOLID.** Kanji 12 (先生学人国男女子友父母名), partikel dasar, dan mayoritas kotoba sudah mantap.
+- **Sisa gap kecil yang perlu terus di-spaced review (bukan blocker, tapi belum 100%):** さくや (tadi malam — sudah salah berkali-kali lintas sesi, prioritas), tanggal 5日/8日/9日 (いつか/ようか/ここのか — masih ketuker/ngarang bunyi), 600円 (ろっぴゃく — lupa perubahan bunyi っ). かいぎしつ dan ちかてつ sempat salah tapi kemungkinan cuma salah baca cepat (sebelumnya sering benar).
+- User anggap ini sesi "final review" Bab 1-5 — kandidat kuat untuk mulai transisi ke materi baru (kanji Hari 1 kelompok 3 dan/atau Bab 6 MNN) di sesi berikutnya, sambil tetap spaced-review sisa gap kecil di atas.
+
+### Sesi 10 (test recall murni — temuan penting soal gap recognition vs recall)
+- User minta test 50 soal MAYORITAS ISIAN (bukan pilihan ganda) untuk "pure" test kemampuan produksi/recall, bukan cuma pengenalan.
+- **Temuan penting:** skor recall MURNI jauh lebih rendah dari recognition (pilihan ganda) — 52% (test 1) vs 90% (final review kemarin yang banyak pilihan ganda). Ini NORMAL secara riset memori (recognition selalu lebih mudah dari recall), bukan tanda kemunduran. Artinya kosakata "ada" tapi belum cukup kuat buat ditarik keluar tanpa bantuan opsi.
+- **Bug ditemukan & harus diperbaiki di masa depan:** soal isian untuk kata KATAKANA (エレベーター, エスカレーター) tidak bisa dijawab benar sama sekali karena konverter romaji-ke-hiragana cuma hasilkan hiragana, sementara jawaban tersimpan katakana — otomatis selalu salah walau user benar. SOLUSI KE DEPAN: untuk kata katakana, pakai soal pilihan ganda, JANGAN soal isian bebas (sudah diterapkan di test kedua).
+- Setelah restudy singkat + variasi kontras, retest 50 soal lagi: 35/50 (70%), naik signifikan dari 52%.
+- **Pola penting:** banyak kesalahan sekarang berupa PASANGAN TERTUKAR (5日↔6日, きょねん↔おととし, 300円↔800円) — bukan lupa total, tapi interferensi antar item mirip. Untuk sesi depan, review pasangan ini sebagai KONTRAS LANGSUNG (tanya berdampingan) alih-alih terpisah, supaya diferensiasinya lebih kuat.
+- **Sisa gap murni (recall) yang masih perlu terus di-drill:** 5日/6日/9日/20日 (tanggal iregular, terutama yang bunyinya mirip), せんせんげつ (ejaan げつ vs がつ ketuker karena over-correction dari aturan baru), きょねん/おととし (pasangan tertukar), あね, きっさてん, きょうだい (masih di-generate random, belum benar2 encode), angka rendaku 300/600/800円 (pasangan tertukar + っ placement).
+- Keputusan: LANJUT ke Bab 6 MNN sekarang (kotoba Bab 1-5 dan kanji Hari 1 kelompok 1-2 dianggap cukup solid untuk fondasi), sambil gap-gap recall di atas terus di-spaced-review ringan berdampingan dengan materi baru (interleaving), bukan diblokir sampai 100%.
+
+---
+
+### Sesi 11 (MULAI BAB 6, user punya 4 jam belajar hari ini)
+- User upload materi lengkap Pelajaran 6 MNN: kosakata (verba transitif +を, kata makanan/minuman), grammar (を+verba, を します, なん vs なに, tempat+で+verba, ~ませんか, ~ましょう, ~か untuk info baru).
+- Studi awal (fase study dulu karena materi benar-benar baru) — dijelaskan di chat dengan koneksi ke materi lama (をします nyambung ke べんきょうします yang sudah dikenal, あさごはん/ひるごはん/ばんごはん nyambung ke prefiks waktu あさ/ひる/ばん dari Bab 4).
+- Retrieval pertama (28 soal, MC-dominan karena materi baru): 22/28.
+- **Kesalahan sesuai prediksi:** かきます(menulis)/ききます(mendengar) tertukar — sudah diflag sebagai pasangan rawan sebelum kuis. よみます(membaca)/みます(melihat) tertukar. あさごはん/ひるごはん keduanya dijawab "makan malam" — user belum otomatis menyambungkan ke prefiks waktu あさ/ひる/ばん yang sudah dikuasai, perlu penekanan ulang koneksi ini. あいます pakai partikel に (bukan で/を) sempat salah — wajar karena ini pengecualian pola.
+- Rencana lanjutan hari ini (4 jam tersedia, dipecah blok kecil + jeda, bukan maraton): lanjut ke grammar Bab 6 (を construction, ませんか/ましょう, で tempat aksi), retest kosakata yang masih tertukar dengan format kontras eksplisit.
+- Latihan lanjutan lebih sulit (30 soal, kontras + kalimat): 19/28. かきます/ききます dan よみます/みます MASIH tertukar (perlu pendekatan beda, bukan cuma diulang). あさごはん/ひるごはん/ばんごはん dijawab よるごはん (pakai よる bukan ばん — catatan: よるごはん TIDAK ada, kata majemuknya harus ばん). Grammar ませんか/ましょう awalnya belum klik strukturnya (bukan cuma salah kata) — dijelaskan ulang: [kata kerja tanpa ます] + ませんか/ましょう.
+- **Terobosan:** dibuatkan 2 percakapan panjang (monolog Bab1-5 sebelumnya + dialog Bab4-6, satu narasi nyambung dengan kanji+furigana+terjemahan per baris, karakter たなか & アルセン) untuk latihan baca/ucap sekaligus exposure natural ke kosakata Bab 6 dalam konteks kalimat asli. Setelah itu, retest ringan 22 soal: 20/22 — LONCATAN BESAR, かきます/ききます/よみます/みます yang tadi tertukar sekarang benar semua. Kesimpulan: paparan lewat dialog/narasi kontekstual jauh lebih efektif buat kata-kata yang susah nempel lewat kuis definisi/kontras biasa.
+- Sisa kecil: やさい(sayur)/やすい(murah) mirip bunyi, かいものをします (frasa utuh, beda dari かいます saja).
+- **Status Bab 6: kosakata inti sudah solid.** Selanjutnya bisa lanjut ke grammar lebih dalam (praktik kalimat majemuk dengan を/で/ませんか/ましょう) atau mulai Bab 7 kalau user mau.
+
+---
+
 ## Vocab Resmi Minna no Nihongo I Bab 1-5 (dari user, referensi utama)
 
 User sudah kasih daftar lengkap dari textbook asli. Kata-kata dari Bab 1-5 yang TERCATAT ADA di buku tapi BELUM/JARANG dites di kuis kita (per Sesi 5): わたしたち, あなた, あの人/あの方, みなさん, 〜さん/ちゃん/くん, しゃいん, ぎんこういん, country names (アメリカ/インドネシア/中国 dst), カード, テープ, テープレコーダー, ネクタイ, ワイン, たばこ, 〜円, けさ done, 番号/何番, バンコク/ペキン/ロンドン dst (nama kota), ふつう/きゅうこう/とっきゅう, 〜番線. Kalau masih ada waktu di sesi-sesi depan, kata-kata ini bisa jadi materi tambahan ringan.
