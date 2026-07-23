@@ -140,6 +140,16 @@ Update file ini di akhir tiap sesi. Struktur: tanggal sesi → apa yang dipelaja
 - Sisa kecil: やさい(sayur)/やすい(murah) mirip bunyi, かいものをします (frasa utuh, beda dari かいます saja).
 - **Status Bab 6: kosakata inti sudah solid.** Selanjutnya bisa lanjut ke grammar lebih dalam (praktik kalimat majemuk dengan を/で/ませんか/ましょう) atau mulai Bab 7 kalau user mau.
 
+### Sesi 12 (siang-sore, sesi belajar 5 tahap terstruktur, user punya 2,5 jam)
+User minta 5 tahap berurutan, tiap tahap "berat" (~60 soal setara), bukan maraton tanpa jeda:
+1. **Kalimat ringan/absorbing (62 soal, mudah):** 58/62 (~94%). Sisa error kebanyakan bug/salah desain soal (bukan salah user), termasuk katakana-answer bug yang balik muncul.
+2. **Tes lebih susah (60 soal, kontras+isian):** 41/60 (~68%) — turun karena mulai capek (banyak jawaban ngaco di akhir, tanda kelelahan seperti pola sebelumnya) DAN karena genuinely lebih sulit. Gap nyata: konstruksi ませんか(ajakan)/ましょう(jawaban setuju/ajakan aktif) masih sering tertukar arah pemakaiannya, なんですか (bukan なにですか), ききます/よみます sesekali ketuker lagi, 4月 masih ke よがつ, さらいねん/おととし arah tertukar, angka rendaku 600/800円 masih lupa っ.
+3. **Cloze percakapan panjang sulit (37 titik kosong):** 28/37 raw, tapi ~5-6 di antaranya salah karena soal Claude sendiri kurang adil (minta bentuk stem verba te-form yang belum diajarkan resmi, bug katakana lagi, grading kaku). Skor efektif ~34/37 (~92%) kalau bug dikeluarkan.
+4. **Sesi output (user bikin dialog sendiri dari nol, ~15 baris):** KUALITAS TINGGI untuk percobaan pertama — berhasil pakai ませんか/ましょう/を+verba dengan benar secara natural, bahkan konstruksi は...が yang belum pernah diajarkan dipakai tepat. Kesalahan yang ditemukan (bukan dari materi kita, tapi pola umum bahasa Jepang yang perlu dicatat untuk ke depan): (a) na-adjective (きれい, dst) butuh な sebelum kata benda + です di akhir, (b) すき/だいすき pakai partikel が, BUKAN を (pengecualian dari pola verba transitif biasa), (c) いっしょに sempat kesalahan ejaan (ditulis "ishounii").
+5. **Kanji Bab 6 (belum dimulai)** — masih pending, kanji sumbernya dari materi Bab 6 yang sudah diupload user (食,飲,見,聞,読,書,買,撮,会,何,朝,昼,晩,卵,肉,魚,野菜,果物,茶,手紙,写真,店,庭, dll), bukan dari PDF kanji N5 yang belum bisa dibuka Claude.
+
+**Tambahan non-bahasa:** dibuatkan file terpisah `Doa_Setelah_Belajar.md` di folder — kumpulan doa Katolik (doa syukur pribadi setelah belajar + Bapa Kami, Salam Maria, Kemuliaan, Terpujilah Yesus Kristus) dalam bahasa Jepang dengan furigana + terjemahan Indonesia, format sama seperti latihan baca/ucap. Tiga doa utama (Bapa Kami/Salam Maria/Kemuliaan) pakai teks resmi Konferensi Waligereja Katolik Jepang (diverifikasi via web search), dua lainnya (pembuka syukur + Terpujilah Yesus Kristus) disusun sendiri oleh Claude. User Katolik, dipakai sebagai penutup rutin sesi belajar.
+
 ---
 
 ## Vocab Resmi Minna no Nihongo I Bab 1-5 (dari user, referensi utama)
@@ -158,6 +168,9 @@ User sudah kasih daftar lengkap dari textbook asli. Kata-kata dari Bab 1-5 yang 
 - [ ] Kalau kosakata waktu sudah solid, lanjut ke kanji Hari 1 kelompok 3 dan/atau mulai Bab 6 Minna no Nihongo — user perlu upload halaman kanji Hari 2 kalau mau lanjut (Claude belum bisa buka PDF kanji langsung).
 - [ ] Lanjutkan latihan baca/ucap paragraf furigana (satu narasi nyambung, metode poin 10) secara berkala.
 - [ ] Ingat: sesi harus tetap 30-50 soal, tersebar di jam berbeda kalau user mau lanjut hari yang sama (metode poin 8) — jangan diborongkan.
+- [ ] **Tahap 5 (belum selesai):** kanji baru dari Bab 6 (食,飲,見,聞,読,書,買,撮,会,何,朝,昼,晩,卵,肉,魚,野菜,果物,茶,手紙,写真,店,庭) — studi + retrieval.
+- [ ] Review lanjutan: ませんか vs ましょう (konstruksi ajakan vs jawaban setuju masih tertukar), na-adjective+な+です (きれいな〜です), すき/だいすき pakai が bukan を.
+- [ ] Kalau tahap 5 dan grammar di atas udah solid, pertimbangkan mulai Bab 7 MNN dan/atau kanji Hari 1 kelompok 3 (perlu upload materi, Claude belum bisa buka PDF kanji langsung).
 
 ---
 
