@@ -148,6 +148,12 @@ User minta 5 tahap berurutan, tiap tahap "berat" (~60 soal setara), bukan marato
 4. **Sesi output (user bikin dialog sendiri dari nol, ~15 baris):** KUALITAS TINGGI untuk percobaan pertama — berhasil pakai ませんか/ましょう/を+verba dengan benar secara natural, bahkan konstruksi は...が yang belum pernah diajarkan dipakai tepat. Kesalahan yang ditemukan (bukan dari materi kita, tapi pola umum bahasa Jepang yang perlu dicatat untuk ke depan): (a) na-adjective (きれい, dst) butuh な sebelum kata benda + です di akhir, (b) すき/だいすき pakai partikel が, BUKAN を (pengecualian dari pola verba transitif biasa), (c) いっしょに sempat kesalahan ejaan (ditulis "ishounii").
 5. **Kanji Bab 6 (belum dimulai)** — masih pending, kanji sumbernya dari materi Bab 6 yang sudah diupload user (食,飲,見,聞,読,書,買,撮,会,何,朝,昼,晩,卵,肉,魚,野菜,果物,茶,手紙,写真,店,庭, dll), bukan dari PDF kanji N5 yang belum bisa dibuka Claude.
 
+### Sesi 13 (pagi, review Bab 6 via dialog baru + kuis)
+- Dialog baru (skenario rutinitas harian & makan siang bareng, karakter たなか/アルセン) dibaca dulu sebelum kuis, sesuai request user (script dulu baru tes).
+- Kuis review kosakata Bab 6 (35 soal): 33/35 (~94%) — performa pagi jauh lebih stabil dibanding sesi kemarin sore/malam yang mulai kelelahan.
+- Salah: しごと(kerja) sempat ketuker かいしゃ(perusahaan/kantor) — konsep berdekatan. けんきゅうしゃ masih lupa ん di tengah — ini kesalahan PALING PERSISTEN dari semua kosakata yang pernah direview (sudah salah berkali-kali lintas banyak sesi berbeda hari), kandidat kuat untuk butuh mnemonic khusus alih-alih terus diulang biasa.
+- Tahap 5 (kanji Bab 6) masih pending dari sesi kemarin.
+
 **Tambahan non-bahasa:** dibuatkan file terpisah `Doa_Setelah_Belajar.md` di folder — kumpulan doa Katolik (doa syukur pribadi setelah belajar + Bapa Kami, Salam Maria, Kemuliaan, Terpujilah Yesus Kristus) dalam bahasa Jepang dengan furigana + terjemahan Indonesia, format sama seperti latihan baca/ucap. Tiga doa utama (Bapa Kami/Salam Maria/Kemuliaan) pakai teks resmi Konferensi Waligereja Katolik Jepang (diverifikasi via web search), dua lainnya (pembuka syukur + Terpujilah Yesus Kristus) disusun sendiri oleh Claude. User Katolik, dipakai sebagai penutup rutin sesi belajar.
 
 ---
