@@ -158,6 +158,42 @@ User minta 5 tahap berurutan, tiap tahap "berat" (~60 soal setara), bukan marato
 
 ---
 
+## Bab 7 — Rencana Belajar Akhir Pekan (Jumat-Minggu)
+
+User upload materi lengkap Pelajaran 7 MNN: kosakata (きります/おくります/あげます/もらいます/かします/かります/おしえます/ならいます/でんわをかけます, alat makan/tulis/kantor, パソコン/ケータイ/メール/ねんがじょう, はな/シャツ/プレゼント/にもつ/おかね/きっぷ, keluarga lengkap termasuk そふ/そぼ/りょうしん/あに/あね/おとうと/いもうと/きょうだい/ふうふ/つま/おっと/むすこ/むすめ, もう/まだ), grammar (で untuk sarana/cara, "Xは~語で何ですか", あげます/かします/おしえます+に untuk penerima, もらいます/かります/ならいます+に atau から untuk pemberi, もうKataKerjaました untuk "sudah", penghilangan partikel dalam percakapan santai).
+
+**Rencana 3 hari (disepakati bareng user, sudah melalui diskusi kritik soal volume/kelelahan):**
+
+| Hari | Aktivitas |
+|---|---|
+| Jumat malam | [Tahap 1] 50 soal pengenalan sangat mudah (selesai) → [Tahap 2] 50 soal recalling cukup sulit berbasis kalimat (sedang berjalan) |
+| Sabtu pagi | [Tahap 3] Percakapan panjang (pengucapan awal) |
+| Sabtu siang | [Tahap 4] 50 soal recalling susah berbasis kalimat |
+| Sabtu sore | [Tahap 5] Percakapan sangat panjang (kefasihan) |
+| Sabtu malam (kalau masih fresh) | [Tahap 6] Kuis sangat susah berbasis kalimat |
+| Sabtu malam/Minggu | [Tahap 7] Sesi kanji dasar (keluarga: 祖父祖母両親兄姉弟妹夫妻息子娘 + kata kerja: 切送貸借教習) digabung dengan review Bab 1-7 lewat percakapan/kalimat (bukan kuis drilling terpisah, sesuai temuan bahwa dialog kontekstual lebih efektif) |
+| Minggu | Initial learning Bab 8 (ringan, kalau masih fresh — kalau capek cukup studi tanpa kuis berat) |
+
+**Prinsip yang disepakati:** tiap hari boleh nampung banyak aktivitas ASALKAN ada jeda nyata (main game/istirahat) di antaranya, bukan beruntun tanpa henti. Kalau ada tanda kelelahan (jawaban ngaco/random), berhenti duluan — nggak wajib nyelesein sesi penuh. Bab 8 sengaja digeser ke Minggu (bukan Sabtu) karena materi baru butuh otak fresh untuk fase studi awal.
+
+**Progress sejauh ini:**
+- Tahap 1 (50 soal pengenalan): 45/50 (~90%). Salah: あげます vs かします ketuker, つま dikira anak perempuan (harusnya むすめ), むすこ dikira "anak" umum, もう/まだ kebalik arahnya.
+- Tahap 2 versi pertama (100 soal kalimat "mudah" tambahan atas permintaan user): **ditarik/diulang** karena desain soal cacat — kebanyakan cuma nanya partikel で berulang-ulang (~10x soal serupa) alih-alih kosakata, sesuai kritik langsung dari user. Dibuat ulang versi seimbang (kosakata jadi fokus utama, grammar terintegrasi natural, tidak diulang di satu partikel) — hasil belum dilaporkan user.
+- **Pelajaran metode baru:** hindari bikin soal yang berulang-ulang nguji SATU partikel/pola tata bahasa doang — itu bukan latihan kosakata, dan user langsung menangkap masalah ini. Soal berbasis kalimat harus tetap menguji PEMAHAMAN KATA (lewat pertanyaan arti/konteks), bukan cuma jadi wadah kosong buat drilling partikel.
+
+### Bab 8 & 9 — Pivot dari les (kelas sudah lanjut duluan) + metode baru "kartu pemandu pola"
+
+- Les user sudah lanjut ke Bab 8 di kelas, jadi Bab 7 (yang belum kelar tahap 4-7) DITANDAI HUTANG, dipause, prioritas pindah ke Bab 8 lalu Bab 9 sesuai ritme kelas — sesuai prinsip les sebagai trigger/anchor (metode poin 10.5).
+- User upload materi Bab 8 (kata sifat な/い, positif/negatif, pola menerangkan kata benda, が kontras, とても/あまり, はどうですか, どんな~ですか) dan Bab 9 (が+わかります/あります/すき/きらい/じょうず/へた, どんな+KB dijawab konkret, よく/だいたい/たくさん/すこし/あまり/ぜんぜん, から, どうして).
+- Dibuatkan file referensi terpisah `Framework_Bab8_Kata_Sifat.md` — tabel konjugasi な vs い-adjective lengkap, supaya user bisa cek ulang kapan saja tanpa perlu nanya lagi. User sempat bingung soal "buang な" — sudah diklarifikasi dengan contoh eksplisit (な cuma muncul saat menerangkan kata benda, TIDAK muncul di posisi predikat).
+- **Kondisi khusus:** user nggak sempat baca materi Bab 7/8/9 satu-satu secara detail (keterbatasan waktu), minta metode alternatif: bukan kuis tes, tapi "soal pemandu" yang FUNGSINYA MEMAPARKAN pengetahuan (expose dulu, bukan uji ingatan). User juga minta kosakata dibatasi ke yang basic aja, skip daftar kosakata musik/olahraga/film yang panjang dan jarang dipakai.
+- **Metode baru yang terbukti efektif:** dibuat widget "kartu pemandu pola" — 100 kartu one-at-a-time, tiap kartu langsung kasih contoh kalimat asli + terjemahan + tombol "lihat penjelasan pola" (bukan kuis dengan skor, murni exposure). Mencakup pola inti Bab 7 (で, あげます/もらいます, かします/かります, おしえます/ならいます, もう/まだ), Bab 8 (な/い-adjective positif-negatif, な+KB vs い+KB, が kontras, とても/あまり, どうですか/どんな), dan Bab 9 (が+わかります/あります/すき/きらい/じょうず/へた, よく/だいたい/たくさん/すこし/あまり/ぜんぜん, から/どうして), dengan kosakata dasar seperlunya saja.
+- Setelah 100 kartu exposure, user diberi retrieval CHECK ringan-mudah (50 soal, bukan berat): skor 45/50 (~90%) — validasi kuat bahwa metode "exposure cepat via kartu pemandu" efektif untuk situasi keterbatasan waktu, TANPA perlu baca detail tiap halaman textbook satu-satu.
+- Kesalahan retrieval: い-adjective+KB sempat dikira perlu な juga (padahal cuma な-adjective yang butuh, aturan penting jangan sampai overgeneralisasi), いそがしい ejaan kepeleset, アルバイト dikira kerja penuh waktu (padahal paruh waktu), おくります(kirim)/きります(potong) sempat ketuker, dan satu salah baca soal (bukan salah konsep) soal pola どんな.
+- **Pelajaran metode besar:** kalau user dalam kondisi keterbatasan waktu/nggak bisa baca materi detail, "kartu pemandu pola" (exposure murni tanpa skor dulu, followed by retrieval check ringan) adalah pendekatan yang sangat efektif — dipertimbangkan jadi opsi standar ke depan kalau situasi serupa terulang.
+
+---
+
 ## Vocab Resmi Minna no Nihongo I Bab 1-5 (dari user, referensi utama)
 
 User sudah kasih daftar lengkap dari textbook asli. Kata-kata dari Bab 1-5 yang TERCATAT ADA di buku tapi BELUM/JARANG dites di kuis kita (per Sesi 5): わたしたち, あなた, あの人/あの方, みなさん, 〜さん/ちゃん/くん, しゃいん, ぎんこういん, country names (アメリカ/インドネシア/中国 dst), カード, テープ, テープレコーダー, ネクタイ, ワイン, たばこ, 〜円, けさ done, 番号/何番, バンコク/ペキン/ロンドン dst (nama kota), ふつう/きゅうこう/とっきゅう, 〜番線. Kalau masih ada waktu di sesi-sesi depan, kata-kata ini bisa jadi materi tambahan ringan.

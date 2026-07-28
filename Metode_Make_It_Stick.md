@@ -77,6 +77,16 @@ Soal murni definisi kata lepas masih boleh dipakai untuk kata yang BENAR-BENAR b
 
 Format: "Kata baru: きます = X, おおぜい = Y, いう = Z". Jangan glosariumkan kata yang jadi FOKUS/JAWABAN soal itu sendiri (itu tetap harus ditebak), hanya kata-kata pendukung di sekitarnya yang di luar cakupan resmi.
 
+## 10.7 Metode Alternatif: Kartu Pemandu Pola (untuk situasi keterbatasan waktu)
+
+Kalau user tidak sempat membaca materi bab baru satu-satu secara detail (misal kelas les sudah lanjut duluan, atau waktu terbatas), gunakan format "kartu pemandu pola" sebagai pengganti studi mendalam:
+
+- Buat widget kartu one-at-a-time: tiap kartu tampilkan SATU contoh kalimat asli (bukan kata lepas) + terjemahan Indonesia + tombol "lihat penjelasan pola" yang mengungkap catatan singkat soal pola gramatikal/pemakaiannya.
+- INI BUKAN KUIS — tidak ada skor, tidak ada jawaban salah/benar. Tujuannya murni paparan cepat (exposure), bukan uji ingatan.
+- Fokuskan ke POLA GRAMATIKAL inti tiap bab, bukan daftar kosakata panjang/jarang dipakai (kalau user minta dibatasi ke "basic saja").
+- Setelah selesai semua kartu, BARU kasih retrieval check ringan (bukan berat, sekitar 40-50 soal MUDAH) untuk konfirmasi seberapa nempel.
+- **Terbukti efektif (validasi Bab 7-9):** metode ini menghasilkan retensi ~90% pada retrieval check pertama, meski user sama sekali tidak membaca materi asli satu per satu. Jadikan opsi standar kalau situasi serupa (keterbatasan waktu, kelas sudah lanjut duluan) terulang di bab-bab berikutnya.
+
 ## 10.6 Temuan: Narasi/Dialog Kontekstual untuk Pasangan Kata yang Susah Nempel
 
 Ditemukan di Bab 6: pasangan kata yang tetap tertukar meski sudah diulang berkali-kali lewat kuis definisi/kontras (かきます/ききます, よみます/みます) langsung membaik drastis setelah dipakai dalam dialog/narasi panjang yang kontekstual (poin 10) — dari sering salah jadi benar semua di retest berikutnya.
