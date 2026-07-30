@@ -3,8 +3,12 @@
 @tailwind utilities;
 
 body {
-  background: #1b1b1a;
-  color: #ececea;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+*:focus-visible {
+  outline: 2px solid theme("colors.accent");
+  outline-offset: 2px;
 }
 
 ruby {
@@ -13,12 +17,13 @@ ruby {
 
 rt {
   font-size: 11px;
-  color: #a3a29e;
+  color: theme("colors.muted");
+  user-select: none;
 }
 
 .jword .trans {
   display: none;
-  color: #a9bdf7;
+  color: theme("colors.accent");
 }
 .jword .orig {
   display: inline;
@@ -33,9 +38,10 @@ rt {
 ruby.dictword,
 span.dw {
   cursor: pointer;
+  transition: background-color 150ms ease;
+  border-radius: 4px;
 }
 ruby.dictword:hover,
 span.dw:hover {
-  background: #2a3352;
-  border-radius: 4px;
+  background: theme("colors.surface2");
 }

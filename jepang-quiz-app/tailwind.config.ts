@@ -8,12 +8,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: "#1b1b1a",
-        surface: "#242423",
-        surface2: "#2d2d2c",
-        border: "#3a3a38",
-        muted: "#a3a29e",
-        accent: "#7f9cf5",
+        bg: "#0c0c0d",
+        surface: "#141416",
+        surface2: "#1c1c1f",
+        border: "#2a2a2e",
+        muted: "#93939c",
+        fg: "#f4f4f5",
+        accent: "#818cf8",
+        "accent-fg": "#0c0c0d",
+        success: "#34d399",
+        danger: "#f87171",
       },
     },
   },

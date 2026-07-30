@@ -60,6 +60,66 @@ Aturan:
 Materi soalnya:
 [TEMPEL MATERI/TEKS/KOSAKATA KAMU DI SINI]`;
 
+function SpeakerIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.8}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="h-4 w-4"
+      aria-hidden="true"
+    >
+      <path d="M4 9v6h4l5 4V5L8 9H4z" />
+      <path d="M16.5 8.5a5 5 0 0 1 0 7" />
+      <path d="M19 6a8.5 8.5 0 0 1 0 12" />
+    </svg>
+  );
+}
+
+function CheckIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="h-3.5 w-3.5"
+      aria-hidden="true"
+    >
+      <path d="M20 6 9 17l-5-5" />
+    </svg>
+  );
+}
+
+function CrossIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="h-3.5 w-3.5"
+      aria-hidden="true"
+    >
+      <path d="M18 6 6 18" />
+      <path d="M6 6l12 12" />
+    </svg>
+  );
+}
+
+const primaryBtn =
+  "rounded-lg bg-accent px-4 py-2.5 text-sm font-medium text-accent-fg transition-colors hover:bg-accent/90 disabled:cursor-not-allowed disabled:opacity-40";
+const secondaryBtn =
+  "cursor-pointer rounded-lg border border-border bg-surface px-4 py-2.5 text-sm font-medium text-fg transition-colors hover:border-accent/60 hover:bg-surface2 disabled:cursor-not-allowed disabled:opacity-40";
+const card = "rounded-2xl border border-border bg-surface p-6";
+
 export default function QuizApp() {
   const [quizData, setQuizData] = useState<QuizData | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -260,13 +320,16 @@ export default function QuizApp() {
   if (!quizData) {
     return (
       <div>
-        <h1 className="mb-1 text-xl font-semibold">Kuis Bahasa Jepang</h1>
-        <p className="mb-6 text-sm text-muted">
+        <h1 className="mb-2 text-2xl font-semibold tracking-tight">
+          Kuis Bahasa Jepang
+        </h1>
+        <p className="mb-8 text-sm leading-relaxed text-muted">
           Load file JSON soal, atau paste JSON langsung. Kata bergaris
           putus-putus bisa di-hover, kanji/kata ber-kamus bisa diklik.
         </p>
-        <div className="rounded-xl border border-dashed border-border p-8 text-center">
-          <label className="inline-block cursor-pointer rounded-lg border border-border bg-surface2 px-5 py-2.5 text-sm hover:border-accent">
+
+        <div className={`${card} text-center`}>
+          <label className={`${primaryBtn} inline-block cursor-pointer`}>
             Pilih file JSON soal
             <input
               type="file"
@@ -278,12 +341,15 @@ export default function QuizApp() {
           <p className="mt-3 text-sm text-muted">
             {loadError || "Belum ada file dimuat."}
           </p>
-          <details className="mt-4 text-left">
-            <summary className="cursor-pointer text-sm text-muted">
+          <details className="group mt-5 text-left">
+            <summary className="cursor-pointer list-none text-sm font-medium text-muted transition-colors hover:text-fg">
+              <span className="mr-1 inline-block transition-transform group-open:rotate-90">
+                ▸
+              </span>
               Atau paste JSON langsung di sini
             </summary>
             <textarea
-              className="mt-2 w-full rounded-lg border border-border bg-surface2 p-3 font-mono text-xs"
+              className="mt-3 w-full rounded-lg border border-border bg-surface2 p-3 font-mono text-xs leading-relaxed text-fg placeholder:text-muted"
               style={{ minHeight: 140 }}
               placeholder="Tempel isi JSON di sini..."
               value={pastedJson}
@@ -291,7 +357,7 @@ export default function QuizApp() {
             />
             <button
               type="button"
-              className="mt-2 rounded-lg border border-border bg-surface2 px-4 py-2 text-sm hover:border-accent"
+              className={`${secondaryBtn} mt-3`}
               onClick={handlePasteLoad}
             >
               Muat dari paste
@@ -299,11 +365,14 @@ export default function QuizApp() {
           </details>
         </div>
 
-        <details className="mt-4 rounded-xl border border-dashed border-border p-4 text-left">
-          <summary className="cursor-pointer text-sm text-muted">
+        <details className={`${card} group mt-4 text-left`}>
+          <summary className="cursor-pointer list-none text-sm font-medium text-muted transition-colors hover:text-fg">
+            <span className="mr-1 inline-block transition-transform group-open:rotate-90">
+              ▸
+            </span>
             Belum punya soal? Bikin sendiri pakai AI
           </summary>
-          <p className="mt-2 text-sm text-muted">
+          <p className="mt-3 text-sm leading-relaxed text-muted">
             Copy prompt di bawah, tempel ke ChatGPT/Claude/dll bareng materi
             yang mau dijadikan soal (kosakata, halaman buku, dsb). Hasil JSON
             dari AI tinggal paste ke kotak &quot;paste JSON langsung&quot; di
@@ -312,13 +381,13 @@ export default function QuizApp() {
           </p>
           <textarea
             readOnly
-            className="mt-2 w-full rounded-lg border border-border bg-surface2 p-3 font-mono text-xs"
+            className="mt-3 w-full rounded-lg border border-border bg-surface2 p-3 font-mono text-xs leading-relaxed text-fg"
             style={{ minHeight: 160 }}
             value={AI_PROMPT_TEMPLATE}
           />
           <button
             type="button"
-            className="mt-2 rounded-lg border border-border bg-surface2 px-4 py-2 text-sm hover:border-accent"
+            className={`${secondaryBtn} mt-3`}
             onClick={handleCopyPrompt}
           >
             {promptCopied ? "Tersalin!" : "Copy prompt"}
@@ -335,33 +404,48 @@ export default function QuizApp() {
     const freeAnswers = results.filter((r) => r.isFree);
 
     return (
-      <div className="py-4 text-center">
+      <div className="text-center">
         <p className="mb-1 text-sm text-muted">Skor {quizData.title}</p>
-        <p className="mb-6 text-4xl font-semibold">
-          {score} / {gradable.length}
+        <p className="mb-8 text-5xl font-semibold tracking-tight">
+          {score}
+          <span className="text-2xl font-normal text-muted">
+            {" "}
+            / {gradable.length}
+          </span>
         </p>
 
         <div className="flex max-h-[420px] flex-col gap-2 overflow-y-auto text-left">
           {wrongs.length === 0 ? (
-            <p className="text-sm text-muted">
+            <p className="flex items-center justify-center gap-2 rounded-xl border border-border bg-surface p-4 text-center text-sm text-muted">
+              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-success/15 text-success">
+                <CheckIcon />
+              </span>
               Semua benar (di luar soal output bebas).
             </p>
           ) : (
             wrongs.map((r, idx) => (
               <div
                 key={idx}
-                className="flex gap-2.5 rounded-lg bg-surface2 p-3 text-sm"
+                className="flex gap-3 rounded-xl border border-border bg-surface p-4 text-sm"
               >
-                <span className="shrink-0 text-red-400">&#10005;</span>
-                <div>
-                  <span className="text-muted">{r.tag}</span>
-                  <br />
-                  <span dangerouslySetInnerHTML={{ __html: r.promptHtml }} />
-                  <br />
-                  <span className="text-red-400">
-                    Jawabanmu: {r.picked}
-                  </span>{" "}
-                  - <span className="text-green-400">Benar: {r.right}</span>
+                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-danger/15 text-danger">
+                  <CrossIcon />
+                </span>
+                <div className="min-w-0">
+                  {r.tag && (
+                    <span className="text-xs font-medium text-muted">
+                      {r.tag}
+                    </span>
+                  )}
+                  <p
+                    className="mt-0.5 leading-relaxed"
+                    dangerouslySetInnerHTML={{ __html: r.promptHtml }}
+                  />
+                  <p className="mt-1.5 text-sm">
+                    <span className="text-danger">Jawabanmu: {r.picked}</span>
+                    <span className="text-muted"> · </span>
+                    <span className="text-success">Benar: {r.right}</span>
+                  </p>
                 </div>
               </div>
             ))
@@ -370,12 +454,12 @@ export default function QuizApp() {
 
         {freeAnswers.length > 0 && (
           <>
-            <p className="mb-2 mt-6 text-left text-sm text-muted">
+            <p className="mb-2 mt-8 text-left text-sm font-medium text-muted">
               Jawaban output bebas (copy-paste ke chat/dosen buat dikoreksi):
             </p>
             <textarea
               readOnly
-              className="w-full rounded-lg border border-border bg-surface2 p-3 text-sm"
+              className="w-full rounded-xl border border-border bg-surface p-3 text-sm leading-relaxed text-fg"
               style={{ minHeight: 150 }}
               value={freeAnswers
                 .map((r, i) => `${i + 1}. ${r.picked}`)
@@ -386,7 +470,7 @@ export default function QuizApp() {
 
         <button
           type="button"
-          className="mt-6 rounded-lg border border-border bg-surface2 px-5 py-2.5 text-sm hover:border-accent"
+          className={`${primaryBtn} mt-8`}
           onClick={loadAnother}
         >
           Muat file lain
@@ -404,32 +488,35 @@ export default function QuizApp() {
 
   return (
     <div>
-      <div className="mb-3 flex items-center justify-between text-sm text-muted">
+      <div className="mb-2 flex items-center justify-between text-sm text-muted">
         <span>
           Soal {currentIndex + 1} / {questions.length}
         </span>
         <span>Skor: {score}</span>
       </div>
-      <div className="mb-6 h-1.5 overflow-hidden rounded-full bg-surface2">
+      <div className="mb-6 h-1 overflow-hidden rounded-full bg-surface2">
         <div
-          className="h-full bg-accent transition-all"
+          className="h-full rounded-full bg-accent transition-all duration-300 ease-out"
           style={{ width: `${(currentIndex / questions.length) * 100}%` }}
         />
       </div>
 
-      {current.tag && (
-        <span className="mb-3 inline-block rounded-md bg-[#2a3352] px-2.5 py-1 text-xs text-[#a9bdf7]">
-          {current.tag}
-        </span>
-      )}
-
-      <button
-        type="button"
-        className="mb-3 flex items-center gap-1.5 rounded-lg border border-border bg-surface2 px-3 py-1.5 text-sm hover:border-accent"
-        onClick={() => speakJapanese(current.promptHtml)}
-      >
-        &#128266; Dengar
-      </button>
+      <div className="mb-4 flex flex-wrap items-center gap-2">
+        {current.tag && (
+          <span className="rounded-full border border-accent/25 bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
+            {current.tag}
+          </span>
+        )}
+        <button
+          type="button"
+          className={`${secondaryBtn} ml-auto flex items-center gap-1.5 !px-3 !py-1.5`}
+          onClick={() => speakJapanese(current.promptHtml)}
+          aria-label="Dengar pengucapan soal"
+        >
+          <SpeakerIcon />
+          Dengar
+        </button>
+      </div>
 
       <p
         ref={promptRef}
@@ -438,7 +525,7 @@ export default function QuizApp() {
       />
 
       {(promptHasJword || promptHasRuby || promptHasDw) && (
-        <p className="-mt-2 mb-4 text-xs text-muted">
+        <p className="-mt-1 mb-5 text-xs text-muted">
           {promptHasJword &&
             "Hover kata bergaris putus-putus untuk lihat artinya. "}
           {(promptHasRuby || promptHasDw) &&
@@ -449,20 +536,21 @@ export default function QuizApp() {
       {current.type === "mc" && (
         <div className="flex flex-col gap-2">
           {current.options.map((opt, i) => {
-            let stateClasses = "border-border bg-surface hover:border-accent";
+            let stateClasses =
+              "border-border bg-surface hover:border-accent/60 hover:bg-surface2";
             if (answered) {
               if (i === current.answer)
-                stateClasses =
-                  "border-green-600 bg-green-950 text-green-400";
+                stateClasses = "border-success/40 bg-success/10 text-success";
               else if (i === pickedOption)
-                stateClasses = "border-red-600 bg-red-950 text-red-400";
+                stateClasses = "border-danger/40 bg-danger/10 text-danger";
+              else stateClasses = "border-border bg-surface opacity-60";
             }
             return (
               <button
                 key={i}
                 type="button"
                 disabled={answered}
-                className={`rounded-lg border px-3.5 py-3 text-left text-sm ${stateClasses}`}
+                className={`cursor-pointer rounded-xl border px-4 py-3 text-left text-sm font-medium transition-colors disabled:cursor-not-allowed ${stateClasses}`}
                 onClick={() => handleSelectOption(i)}
               >
                 {opt}
@@ -474,11 +562,11 @@ export default function QuizApp() {
 
       {current.type === "short" && (
         <div>
-          <div className="mb-1.5 flex gap-2">
+          <div className="mb-2 flex gap-2">
             <input
               type="text"
               disabled={answered}
-              className="flex-1 rounded-lg border border-border bg-surface2 px-3 py-2.5 text-sm"
+              className="flex-1 rounded-lg border border-border bg-surface2 px-3.5 py-3 text-sm text-fg placeholder:text-muted disabled:opacity-60"
               placeholder="Ketik romaji atau hiragana"
               value={shortInput}
               onChange={(e) => setShortInput(e.target.value)}
@@ -489,14 +577,14 @@ export default function QuizApp() {
             <button
               type="button"
               disabled={answered}
-              className="rounded-lg border border-border bg-surface2 px-4 text-sm hover:border-accent disabled:opacity-40"
+              className={secondaryBtn}
               onClick={handleSubmitShort}
             >
               Cek
             </button>
           </div>
           <div className="text-sm text-muted">
-            {shortInput ? "-> " + toHiraganaSafe(shortInput) : ""}
+            {shortInput ? "→ " + toHiraganaSafe(shortInput) : ""}
           </div>
         </div>
       )}
@@ -504,27 +592,29 @@ export default function QuizApp() {
       {current.type === "free" && (
         <div>
           <textarea
-            className="w-full rounded-lg border border-border bg-surface2 p-3 text-sm"
+            className="w-full rounded-lg border border-border bg-surface2 p-3.5 text-sm text-fg placeholder:text-muted"
             style={{ minHeight: 90 }}
             placeholder="Tulis jawabanmu bebas di sini (romaji/hiragana campur boleh)..."
             value={freeInput}
             onChange={(e) => setFreeInput(e.target.value)}
           />
-          <p className="mt-1.5 text-xs text-muted">
+          <p className="mt-2 text-xs text-muted">
             Soal ini tidak dinilai otomatis — jawaban bebas, dicek manual.
           </p>
         </div>
       )}
 
       {feedback && (
-        <div className="mt-4 min-h-[20px] text-sm text-muted">{feedback}</div>
+        <div className="mt-4 rounded-lg border border-border bg-surface2 p-3.5 text-sm leading-relaxed text-muted">
+          {feedback}
+        </div>
       )}
 
-      <div className="mt-4 flex gap-2">
+      <div className="mt-5 flex gap-2">
         {current.type === "free" ? (
           <button
             type="button"
-            className="flex-1 rounded-lg border border-border bg-surface2 px-4 py-2.5 text-sm hover:border-accent"
+            className={`${primaryBtn} flex-1`}
             onClick={handleSubmitFree}
           >
             {currentIndex === questions.length - 1 ? "Lihat hasil" : "Lanjut"}
@@ -533,7 +623,7 @@ export default function QuizApp() {
           <button
             type="button"
             disabled={!answered}
-            className="flex-1 rounded-lg border border-border bg-surface2 px-4 py-2.5 text-sm hover:border-accent disabled:opacity-40"
+            className={`${primaryBtn} flex-1`}
             onClick={goNext}
           >
             {currentIndex === questions.length - 1 ? "Lihat hasil" : "Lanjut"}

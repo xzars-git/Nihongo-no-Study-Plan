@@ -19,17 +19,30 @@ export default function DictPopup({ word, entry, x, y, onClose }: DictPopupProps
 
   return (
     <div
-      className="fixed z-50 max-w-[280px] rounded-xl border border-border bg-surface2 p-3 text-sm shadow-2xl"
+      className="fixed z-50 max-w-[280px] rounded-xl border border-border bg-surface2 p-4 text-sm shadow-xl shadow-black/40"
       style={{ left, top: y + 12 }}
       onClick={(e) => e.stopPropagation()}
     >
-      <span
-        className="absolute right-2 top-1.5 cursor-pointer text-muted"
+      <button
+        type="button"
+        className="absolute right-1.5 top-1.5 flex h-7 w-7 cursor-pointer items-center justify-center rounded-md text-muted transition-colors hover:bg-surface hover:text-fg"
         onClick={onClose}
+        aria-label="Tutup"
       >
-        &#10005;
-      </span>
-      <div className="mb-0.5 text-base font-semibold">{word}</div>
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={2}
+          strokeLinecap="round"
+          className="h-4 w-4"
+          aria-hidden="true"
+        >
+          <path d="M18 6 6 18" />
+          <path d="M6 6l12 12" />
+        </svg>
+      </button>
+      <div className="mb-1 pr-6 text-base font-semibold text-fg">{word}</div>
       {entry ? (
         <>
           {entry.reading && (

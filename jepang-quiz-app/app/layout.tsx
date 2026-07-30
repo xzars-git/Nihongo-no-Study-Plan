@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
   title: "Kuis Bahasa Jepang",
@@ -13,8 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id">
-      <body>{children}</body>
+    <html lang="id" className={inter.variable} style={{ colorScheme: "dark" }}>
+      <body className="bg-bg text-fg antialiased">{children}</body>
     </html>
   );
 }
