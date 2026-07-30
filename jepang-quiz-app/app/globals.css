@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: #1b1b1a;
+  color: #ececea;
+}
+
+ruby {
+  ruby-align: center;
+}
+
+rt {
+  font-size: 11px;
+  color: #a3a29e;
+}
+
+.jword .trans {
+  display: none;
+  color: #a9bdf7;
+}
+.jword .orig {
+  display: inline;
+}
+.jword:hover .trans {
+  display: inline;
+}
+.jword:hover .orig {
+  display: none;
+}
+
+ruby.dictword,
+span.dw {
+  cursor: pointer;
+}
+ruby.dictword:hover,
+span.dw:hover {
+  background: #2a3352;
+  border-radius: 4px;
+}

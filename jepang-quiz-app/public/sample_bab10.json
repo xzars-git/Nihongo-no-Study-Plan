@@ -1,0 +1,100 @@
+{
+  "title": "Bab 10 - Pola & Arah (contoh)",
+  "dictionary": {
+    "机": { "reading": "つくえ", "meaning": "meja", "note": "kata benda dasar, benda mati -> あります" },
+    "上": { "reading": "うえ", "meaning": "atas", "note": "kata posisi" },
+    "下": { "reading": "した", "meaning": "bawah", "note": "kata posisi" },
+    "部屋": { "reading": "へや", "meaning": "kamar/ruangan", "note": "" },
+    "公園": { "reading": "こうえん", "meaning": "taman", "note": "" },
+    "桜": { "reading": "さくら", "meaning": "bunga sakura", "note": "tumbuhan, tetap pakai あります" },
+    "東京": { "reading": "とうきょう", "meaning": "Tokyo", "note": "nama kota" },
+    "千葉県": { "reading": "ちばけん", "meaning": "Prefektur Chiba", "note": "県 = prefektur" },
+    "本": { "reading": "ほん", "meaning": "buku", "note": "" },
+    "箱": { "reading": "はこ", "meaning": "kotak", "note": "" },
+    "中": { "reading": "なか", "meaning": "dalam", "note": "kata posisi" },
+    "手紙": { "reading": "てがみ", "meaning": "surat", "note": "" },
+    "写真": { "reading": "しゃしん", "meaning": "foto", "note": "" },
+    "動物": { "reading": "どうぶつ", "meaning": "binatang", "note": "" },
+    "冷蔵庫": { "reading": "れいぞうこ", "meaning": "kulkas", "note": "" },
+    "パソコン": { "reading": "パソコン", "meaning": "komputer/PC", "note": "kata serapan dari 'personal computer'" }
+  },
+  "questions": [
+    {
+      "type": "mc",
+      "tag": "あります/います",
+      "promptHtml": "<ruby>机<rt>つくえ</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>に<span class=\"dw\">パソコン</span>が___。",
+      "options": ["あります", "います"],
+      "answer": 0,
+      "explain": "パソコン = benda mati, pakai あります."
+    },
+    {
+      "type": "mc",
+      "tag": "あります/います",
+      "promptHtml": "<ruby>公園<rt>こうえん</rt></ruby>に<span class=\"jword\"><span class=\"orig\">犬</span><span class=\"trans\">anjing</span></span>が___。",
+      "options": ["あります", "います"],
+      "answer": 1,
+      "explain": "いぬ = makhluk hidup, pakai います."
+    },
+    {
+      "type": "mc",
+      "tag": "あります/います",
+      "promptHtml": "にわに<ruby>桜<rt>さくら</rt></ruby>が___。(<span class=\"jword\"><span class=\"orig\">植物</span><span class=\"trans\">tumbuhan</span></span>)",
+      "options": ["あります", "います"],
+      "answer": 0,
+      "explain": "さくら = tumbuhan, tetap あります meski hidup, karena tidak bergerak sendiri."
+    },
+    {
+      "type": "mc",
+      "tag": "Pola 1 (tempat が topik)",
+      "promptHtml": "わたしの<ruby>部屋<rt>へや</rt></ruby>に<ruby>机<rt>つくえ</rt></ruby>があります。Apa yang jadi TOPIK kalimat ini?",
+      "options": ["tempat (へや)", "benda (つくえ)"],
+      "answer": 0,
+      "explain": "Pola tempatに KBが あります memasukkan tempat sebagai fokus."
+    },
+    {
+      "type": "mc",
+      "tag": "Pola 2 (benda は topik)",
+      "promptHtml": "<ruby>東京<rt>とうきょう</rt></ruby>ディズニーランドは<ruby>千葉県<rt>ちばけん</rt></ruby>にあります。Apa yang jadi TOPIK kalimat ini?",
+      "options": ["benda/tempat spesifik (Disneyland)", "prefektur (Chiba)"],
+      "answer": 0,
+      "explain": "Pola KBは tempatにあります memasukkan benda sebagai fokus."
+    },
+    {
+      "type": "mc",
+      "tag": "Posisi",
+      "promptHtml": "<ruby>机<rt>つくえ</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>に<ruby>本<rt>ほん</rt></ruby>があります。'うえ' artinya apa?",
+      "options": ["atas", "bawah"],
+      "answer": 0,
+      "explain": "うえ = atas."
+    },
+    {
+      "type": "mc",
+      "tag": "や vs と",
+      "promptHtml": "<ruby>箱<rt>はこ</rt></ruby>の<ruby>中<rt>なか</rt></ruby>に<ruby>手紙<rt>てがみ</rt></ruby>や<ruby>写真<rt>しゃしん</rt></ruby>があります。'や' artinya sebagian atau semua barang?",
+      "options": ["semua (lengkap)", "sebagian (contoh saja)"],
+      "answer": 1,
+      "explain": "や = menyebutkan sebagian sebagai contoh, beda dari と yang lengkap."
+    },
+    {
+      "type": "short",
+      "tag": "Kotoba",
+      "promptHtml": "<span class=\"jword\"><span class=\"orig\">犬</span><span class=\"trans\">anjing</span></span>は<ruby>動物<rt>どうぶつ</rt></ruby>です。'いぬ' tulis bacaannya",
+      "accepted": ["いぬ"],
+      "acceptedRomaji": ["inu"],
+      "explain": "いぬ = anjing."
+    },
+    {
+      "type": "short",
+      "tag": "Kotoba",
+      "promptHtml": "<ruby>冷蔵庫<rt>れいぞうこ</rt></ruby>の<ruby>中<rt>なか</rt></ruby>に<span class=\"jword\"><span class=\"orig\">食べ物</span><span class=\"trans\">makanan</span></span>があります。'れいぞうこ' artinya apa? (tulis dalam Bahasa Indonesia)",
+      "accepted": ["kulkas"],
+      "explain": "れいぞうこ = kulkas."
+    },
+    {
+      "type": "free",
+      "tag": "Output",
+      "promptHtml": "Coba buat 1 kalimat sendiri pakai pola: [tempat]に[benda]があります/います. Ceritakan isi kamarmu.",
+      "note": "Bebas, akan direview manual."
+    }
+  ]
+}
