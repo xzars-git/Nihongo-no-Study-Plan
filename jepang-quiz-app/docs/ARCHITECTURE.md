@@ -131,3 +131,50 @@ reading, meaning, note} }`.
   adding sanitization first.
 - Text-to-speech voice availability is entirely OS/browser-dependent —
   there's no fallback or voice-selection UI yet.
+
+## 9. Deck library, spaced repetition, and local persistence (v0.2.0)
+
+Added a persistence layer so decks and progress survive reloads, built
+around Metode_Make_It_Stick.md's spaced-repetition and dosage rules —
+entirely client-side, no backend/API involved.
+
+- **`lib/storage.ts`** — deck CRUD against `localStorage` (`jqa:decks`).
+  A deck's id is `hashString(title + ":" + questionCount)` (see
+  `lib/hash.ts`), so re-importing the same quiz JSON updates the
+  existing deck instead of duplicating it.
+- **`lib/srs.ts`** — the scheduler. Each question gets a stable id via
+  `questionId()` (hash of its type + prompt + answer-bearing field, so
+  reordering/reshuffling a deck doesn't lose history). `recordResult()`
+  implements the doc's rule directly: two correct answers in a row
+  *today* graduates the card to a multi-day interval (`[1,3,7,14,30,90]`
+  days, extending each graduation); a single correct answer just pushes
+  it to "later today/tomorrow" so it isn't hammered in the same
+  session; a wrong answer demotes it and makes it due immediately.
+  `buildSession()` builds a session's question list for a given
+  `SessionMode` (`all` / `due` / `wrong` / `learn`), shuffles it
+  (interleaving across whatever tags the deck author used), and caps it
+  at 40 by default per the doc's 30-50/session dosage guidance.
+- **`components/Library.tsx`** — the new default screen (`app/page.tsx`
+  renders this until a session starts). Lists saved decks with live
+  stats (`getDeckStats`), an activity heatmap + streak
+  (`getActivity`/`getCurrentStreak`), and hosts `QuizLoader` for adding
+  new decks.
+- **`components/QuizLoader.tsx`** — the old inline loader UI (file
+  upload / paste / AI-prompt guide), extracted so `Library` can reuse it
+  without depending on `QuizApp`.
+- **`components/QuizApp.tsx`** is now a pure, props-driven player: it
+  receives `sessionQuestions` already built by the parent and no longer
+  owns the loader screen. It calls `recordResult`/`setLastWrong` as the
+  user answers (skipped entirely in `learn` mode, which never scores —
+  matching the doc's "kartu pemandu pola" exposure method: reveal
+  answer/explanation, no right/wrong judgment). `app/page.tsx` owns the
+  `Session` state (`{deck, mode, questions, runId}`) and mounts
+  `<QuizApp key={session.runId} .../>` — **the `runId` key is required**
+  because changing `sessionQuestions`/`mode` props alone does not reset
+  `QuizApp`'s internal `useState` (React reuses the component instance);
+  without the remounting key, "Ulangi yang salah" silently reused the
+  finished session's stale state instead of starting a fresh one.
+- **PWA**: `public/manifest.json` + `public/sw.js` (registered from
+  `app/layout.tsx`) make the app installable and cache the shell for
+  offline use. `sw.js` is hand-written (network-first for navigations,
+  cache-first for static assets) — no `next-pwa` dependency.

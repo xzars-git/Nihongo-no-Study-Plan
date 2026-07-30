@@ -8,10 +8,33 @@ selama datanya mengikuti skema JSON di bawah.
 
 ## Fitur
 
+- **Deck library lokal** — kuis yang pernah dimuat tersimpan otomatis di
+  browser (`localStorage`), tidak perlu upload ulang file tiap sesi.
+- **Spaced repetition (SRS)** — tiap soal dilacak per-item; jawaban benar
+  2x berturut hari yang sama "mengistirahatkan" soal itu ke jadwal
+  beberapa hari ke depan (1/3/7/14/30/90 hari), jawaban salah membuatnya
+  due lagi. Mode "Perlu direview" hanya menampilkan soal yang jatuh
+  tempo.
+- **4 mode belajar per deck**: Semua soal, Perlu direview (SRS), Ulangi
+  yang salah (dari sesi terakhir), dan Pelajari (tanpa skor) — mode
+  eksposur murni ala kartu pemandu pola, tanpa dinilai benar/salah.
+- **Sesi otomatis diacak & dibatasi** (default 40 soal/sesi) mengikuti
+  prinsip interleaving + dosis harian dari `Metode_Make_It_Stick.md`.
+- **Streak & activity heatmap** di halaman utama, mirip grafik kontribusi
+  GitHub, untuk motivasi belajar konsisten harian.
+- **Bikin soal sendiri via AI** — panduan + prompt siap-copy di layar
+  "Tambah kuis baru" supaya siapa pun bisa generate kuis JSON dari
+  materi sendiri (paste ke ChatGPT/Claude/dll), lalu tinggal upload/paste
+  hasilnya.
+- **Instalable & offline (PWA)** — bisa di-"Add to Home Screen"/install
+  sebagai app, dan tetap jalan tanpa internet berkat service worker.
 - **Loader fleksibel** — muat soal dari file `.json` atau paste JSON langsung.
 - **3 tipe soal**: pilihan ganda (`mc`), isian singkat (`short`), dan output
   bebas (`free`) untuk latihan menulis kalimat sendiri.
-- **Furigana otomatis** lewat tag `<ruby>` HTML native.
+- **Furigana otomatis** lewat tag `<ruby>` HTML native, dengan tombol
+  sembunyikan/tampilkan furigana untuk latihan baca kanji cold.
+- **Navigasi keyboard** — tombol angka (1-9) memilih opsi pilihan ganda,
+  Enter untuk lanjut/submit.
 - **Kamus klik** — klik kanji/kata apa pun (yang dibungkus `<ruby>` atau
   `<span class="dw">`) untuk lihat arti + catatan singkat dari kamus per-kuis.
 - **Hover-translate** — kata dibungkus `<span class="jword">` akan berganti
@@ -22,6 +45,9 @@ selama datanya mengikuti skema JSON di bawah.
   bawaan browser (butuh voice pack bahasa Jepang terpasang di OS).
 - **Ringkasan hasil** dengan daftar kesalahan dan kotak jawaban output bebas
   yang bisa di-copy untuk direview manual.
+
+Semuanya berjalan 100% di browser (client-side) — tanpa akun, tanpa
+server, tanpa API eksternal apa pun.
 
 ## Menjalankan secara lokal
 

@@ -1,0 +1,12 @@
+{
+  "name": "Kuis Bahasa Jepang",
+  "short_name": "Kuis Jepang",
+  "description": "Kuis bahasa Jepang offline dengan spaced repetition, furigana, dan kamus klik.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0c0c0d",
+  "theme_color": "#0c0c0d",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

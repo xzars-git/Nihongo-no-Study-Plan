@@ -21,6 +21,10 @@ rt {
   user-select: none;
 }
 
+.hide-furigana rt {
+  display: none;
+}
+
 .jword .trans {
   display: none;
   color: theme("colors.accent");

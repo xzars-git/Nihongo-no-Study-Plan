@@ -1,5 +1,40 @@
 # Changelog
 
+## v0.2.0 — Deck library, spaced repetition, offline PWA
+
+- Local deck library (`localStorage`-backed) — quizzes persist across
+  reloads, no more re-uploading the same file every session.
+- Spaced repetition engine (`lib/srs.ts`): per-question scheduling
+  following Metode_Make_It_Stick.md's rules (2x correct same day →
+  rest until a later day on a graduated 1/3/7/14/30/90-day ladder;
+  wrong answers stay due immediately).
+- Four session modes per deck: Semua soal, Perlu direview, Ulangi yang
+  salah, Pelajari (tanpa skor — pure exposure, no grading).
+- Sessions are shuffled (interleaving) and capped at 40 questions by
+  default, matching the doc's 30-50/session dosage guidance.
+- Streak counter + 70-day activity heatmap on the library screen.
+- `QuizApp` refactored into a props-driven player (loader UI extracted
+  to `components/QuizLoader.tsx`, reused by the new `Library` screen).
+- Furigana show/hide toggle and keyboard navigation (1-9 for MC
+  options, Enter to advance/submit).
+- Installable, offline-capable PWA (`public/manifest.json` +
+  hand-written `public/sw.js`, no `next-pwa` dependency).
+- Redesigned UI: clean/minimal dark theme with a semantic color token
+  system, Inter typeface, SVG icons in place of emoji glyphs.
+- AI-prompt guide on the "add deck" screen so anyone can generate a
+  compatible quiz JSON from their own material via any chat AI.
+- Confirmation prompt before deleting a deck (previously instant/silent
+  and would also destroy its SRS history with no way back).
+- "Pelajari (tanpa skor)" mode now counts toward the streak/heatmap —
+  it wasn't calling into the SRS recorder at all before, so exposure-only
+  study days were invisible to the activity tracker.
+- Deck cards now list the actual weakest-item sentences (not just a
+  count), so "paling sering keliru" is something you can act on.
+- Backup/restore: export all local progress (decks + SRS + activity) to
+  a JSON file and import it back — the local equivalent of the "sync"
+  paid tools charge for, protects against losing everything to a
+  cleared browser profile.
+
 ## v0.1.0 — Initial Next.js port
 
 - Ported from a single-file HTML/vanilla-JS prototype to Next.js 14 (App

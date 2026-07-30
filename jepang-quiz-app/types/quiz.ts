@@ -46,4 +46,5 @@ export interface AnsweredResult {
   picked: string;
   right: string;
   isFree?: boolean;
+  qId: string;
 }
