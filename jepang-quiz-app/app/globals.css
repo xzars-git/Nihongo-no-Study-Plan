@@ -38,6 +38,10 @@
 
 body {
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  /* Tanpa ini, tap cepat berulang di elemen kecil (kanji/kata kamus) bisa
+     ditangkap gesture double-tap-to-zoom bawaan browser mobile alih-alih
+     memicu event click — bikin tap kedua/ketiga "tidak berjalan". */
+  touch-action: manipulation;
 }
 
 *:focus-visible {
@@ -61,6 +65,8 @@ rt {
 
 .jword {
   cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
   text-decoration: underline;
   text-decoration-style: dotted;
   text-underline-offset: 3px;
@@ -87,6 +93,8 @@ rt {
 ruby.dictword,
 span.dw {
   cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
   transition: background-color 150ms ease;
   border-radius: 4px;
 }
