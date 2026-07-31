@@ -51,6 +51,25 @@ const secondaryBtn =
   "cursor-pointer rounded-lg border border-border bg-surface px-4 py-2.5 text-sm font-medium text-fg transition-colors hover:border-accent/60 hover:bg-surface2 disabled:cursor-not-allowed disabled:opacity-40";
 const card = "rounded-2xl border border-border bg-surface p-6";
 
+// Guard rail terhadap JSON yang valid tapi bukan bentuk kuis (mis. file
+// JSON lain yang gak sengaja dipilih) — tanpa ini, bentuk salah lolos
+// sampai ke saveDeck()/deckIdFor() dan crash di sana (Cannot read
+// properties of undefined "length"). Bukan validasi skema penuh (lihat
+// Roadmap), cuma jaring pengaman dasar.
+function validateQuizData(data: unknown): string | null {
+  if (typeof data !== "object" || data === null) {
+    return "File ini bukan objek JSON kuis yang valid.";
+  }
+  const d = data as Record<string, unknown>;
+  if (typeof d.title !== "string") {
+    return 'Field "title" (judul kuis) tidak ada atau bukan teks.';
+  }
+  if (!Array.isArray(d.questions) || d.questions.length === 0) {
+    return 'Field "questions" tidak ada, bukan array, atau kosong.';
+  }
+  return null;
+}
+
 interface QuizLoaderProps {
   onLoad: (data: QuizData) => void;
   onCancel?: () => void;
@@ -75,6 +94,11 @@ export default function QuizLoader({ onLoad, onCancel }: QuizLoaderProps) {
     reader.onload = (evt) => {
       try {
         const data = JSON.parse(evt.target?.result as string);
+        const error = validateQuizData(data);
+        if (error) {
+          setLoadError(error);
+          return;
+        }
         onLoad(data);
       } catch (err) {
         setLoadError("Gagal baca file JSON: " + (err as Error).message);
@@ -86,6 +110,11 @@ export default function QuizLoader({ onLoad, onCancel }: QuizLoaderProps) {
   function handlePasteLoad() {
     try {
       const data = JSON.parse(pastedJson);
+      const error = validateQuizData(data);
+      if (error) {
+        setLoadError(error);
+        return;
+      }
       onLoad(data);
     } catch (err) {
       setLoadError("Gagal baca JSON yang dipaste: " + (err as Error).message);

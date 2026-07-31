@@ -1,5 +1,35 @@
 # Changelog
 
+## v0.3.0 — Bug fixes, touch-friendly kamus, theme system
+
+- **Fixed TTS reading Indonesian text / wrong voice**: `lib/tts.ts` now
+  strips Latin-script words (Indonesian instructions, romaji hints,
+  `[placeholder]` fragments) before speaking, explicitly selects an
+  installed `ja-*` voice instead of relying on `lang` alone, and shows
+  a visible warning on the quiz screen when no Japanese voice is
+  installed on the OS/browser (previously failed silently as
+  English-accented mispronunciation).
+- **Fixed a real SRS scheduling bug**: `recordResult()` was re-applying
+  the "2x correct same day" gate to already-graduated cards reviewed on
+  their real due date (days later), which reset them back to "due
+  tomorrow" instead of advancing to the next interval — due counts
+  never stabilized. Now only ungraduated (new) cards need the same-day
+  double-check; graduated cards advance on every correct review.
+- **Fixed DictPopup rendering off-screen** near the bottom of the
+  viewport (only horizontal overflow was clamped before).
+- **Fixed a crash on malformed quiz JSON**: `QuizLoader` now validates
+  `title`/`questions` shape before handing off to `saveDeck`, instead
+  of throwing deep inside `deckIdFor`.
+- **Made `.jword` hover-translate work on touch devices** — it only had
+  a CSS `:hover` reveal, which never fires on mobile; added a tap-to-
+  toggle alongside it.
+- **Theme system**: two selectable templates, switchable from the
+  library screen and persisted locally — "Gelap" (the existing OLED
+  dark theme) and "Klasik Jepang" (Traditional Japanese Art / Cultural
+  Vector: washi-paper cream background, ai-iro indigo + shu-iro
+  vermillion accents, Noto Serif JP headings). Implemented via CSS
+  custom properties so no component styling had to change.
+
 ## v0.2.0 — Deck library, spaced repetition, offline PWA
 
 - Local deck library (`localStorage`-backed) — quizzes persist across

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { toHiraganaSafe } from "@/lib/romaji";
-import { speakJapanese } from "@/lib/tts";
+import { speakJapanese, hasJapaneseVoice } from "@/lib/tts";
 import {
   questionId,
   recordResult,
@@ -114,9 +114,14 @@ export default function QuizApp({
   const [pickedOption, setPickedOption] = useState<number | null>(null);
   const [hideFurigana, setHideFurigana] = useState(false);
   const [revealed, setRevealed] = useState(false); // "learn" mode reveal state
+  const [jaVoiceAvailable, setJaVoiceAvailable] = useState<boolean | null>(null);
 
   const promptRef = useRef<HTMLParagraphElement>(null);
   const finishedRef = useRef(false);
+
+  useEffect(() => {
+    hasJapaneseVoice().then(setJaVoiceAvailable);
+  }, []);
 
   const questions = sessionQuestions;
   const current: Question | undefined = questions[currentIndex];
@@ -165,6 +170,19 @@ export default function QuizApp({
       };
       sp.addEventListener("click", handler);
       cleanups.push(() => sp.removeEventListener("click", handler));
+    });
+
+    // .jword hanya reveal-terjemahan lewat CSS :hover, yang tidak pernah
+    // terpicu di layar sentuh — tambahkan toggle klik/tap sebagai
+    // alternatif yang setara di mobile.
+    const jwords = container.querySelectorAll("span.jword");
+    jwords.forEach((jw) => {
+      const handler = (e: Event) => {
+        e.stopPropagation();
+        jw.classList.toggle("revealed");
+      };
+      jw.addEventListener("click", handler);
+      cleanups.push(() => jw.removeEventListener("click", handler));
     });
 
     return () => cleanups.forEach((fn) => fn());
@@ -456,6 +474,15 @@ export default function QuizApp({
           </button>
         </div>
       </div>
+
+      {jaVoiceAvailable === false && (
+        <p className="-mt-2 mb-4 text-xs text-danger">
+          Tidak ada voice bahasa Jepang terpasang di perangkat ini — tombol
+          &quot;Dengar&quot; akan memakai voice default (bukan Jepang). Install
+          voice/paket bahasa Jepang di pengaturan OS untuk pengucapan yang
+          benar.
+        </p>
+      )}
 
       <p
         ref={promptRef}

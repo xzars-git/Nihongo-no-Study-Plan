@@ -12,15 +12,24 @@ interface DictPopupProps {
 
 export default function DictPopup({ word, entry, x, y, onClose }: DictPopupProps) {
   const popupWidth = 280;
+  // Perkiraan tinggi maksimum popup (judul + reading + meaning + note) —
+  // dipakai untuk memutuskan tampil di bawah atau di atas titik klik.
+  const popupEstHeight = 160;
+
   const left =
     typeof window !== "undefined" && x + 10 + popupWidth > window.innerWidth
-      ? window.innerWidth - popupWidth - 20
+      ? Math.max(8, window.innerWidth - popupWidth - 20)
       : x + 10;
+
+  const top =
+    typeof window !== "undefined" && y + 12 + popupEstHeight > window.innerHeight
+      ? Math.max(8, y - popupEstHeight - 12)
+      : y + 12;
 
   return (
     <div
       className="fixed z-50 max-w-[280px] rounded-xl border border-border bg-surface2 p-4 text-sm shadow-xl shadow-black/40"
-      style={{ left, top: y + 12 }}
+      style={{ left, top, maxHeight: "70vh", overflowY: "auto" }}
       onClick={(e) => e.stopPropagation()}
     >
       <button

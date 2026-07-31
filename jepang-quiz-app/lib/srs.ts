@@ -81,7 +81,15 @@ export function recordResult(
     const newStreak = streakToday + 1;
     const totalSeen = (prev?.totalSeen ?? 0) + 1;
     const totalCorrect = (prev?.totalCorrect ?? 0) + 1;
-    if (newStreak >= 2) {
+    const alreadyGraduated = (prev?.reps ?? 0) > 0;
+    // "2x benar di hari yang sama" hanya berlaku sekali, saat kartu masih
+    // baru (belum pernah lulus ke jadwal multi-hari). Kartu yang sudah
+    // graduated dan direview lagi di hari due-nya (lastDay pasti bukan
+    // hari ini) harus langsung naik ke interval berikutnya, bukan
+    // di-reset ke "tunggu 2x lagi hari ini" — itu bikin kartu yang sudah
+    // lama dipelajari terus-menerus turun ke due besok alih-alih makin
+    // jarang muncul.
+    if (alreadyGraduated || newStreak >= 2) {
       const reps = (prev?.reps ?? 0) + 1;
       const interval = INTERVALS_DAYS[Math.min(reps - 1, INTERVALS_DAYS.length - 1)];
       next = {

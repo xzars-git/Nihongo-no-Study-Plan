@@ -14,16 +14,22 @@ import {
   type BackupFile,
 } from "@/lib/storage";
 import QuizLoader from "@/components/QuizLoader";
+import ThemeToggle from "@/components/ThemeToggle";
+import { getTheme, THEME_CHANGE_EVENT } from "@/lib/theme";
 
 const primaryBtn =
   "rounded-lg bg-accent px-4 py-2.5 text-sm font-medium text-accent-fg transition-colors hover:bg-accent/90 disabled:cursor-not-allowed disabled:opacity-40";
 const secondaryBtn =
   "cursor-pointer rounded-lg border border-border bg-surface px-3.5 py-2 text-sm font-medium text-fg transition-colors hover:border-accent/60 hover:bg-surface2 disabled:cursor-not-allowed disabled:opacity-40";
-const card = "rounded-2xl border border-border bg-surface p-5";
+const card = "rounded-2xl border border-border bg-surface p-5 card-panel";
 
-// Sequential single-hue (blue) ramp, dark-surface variant: lighter step =
-// more activity, per dataviz skill guidance (references/palette.md).
-const HEAT_LEVELS = ["#1c1c1f", "#184f95", "#256abf", "#3987e5", "#86b6ef"];
+// Sequential single-hue ramp per dataviz skill guidance (references/
+// palette.md) — level 0 matches each theme's own surface2 token so empty
+// cells blend in instead of rendering as flat dark squares on a light theme.
+const HEAT_LEVELS_BY_THEME: Record<string, string[]> = {
+  dark: ["#1c1c1f", "#184f95", "#256abf", "#3987e5", "#86b6ef"],
+  traditional: ["#efe3c8", "#e7b98a", "#d98c4a", "#c1440e", "#8b2f0a"],
+};
 
 function heatLevel(count: number): number {
   if (count <= 0) return 0;
@@ -36,11 +42,18 @@ function heatLevel(count: number): number {
 function ActivityHeatmap() {
   const [activity, setActivity] = useState<Record<string, number>>({});
   const [streak, setStreak] = useState(0);
+  const [theme, setThemeState] = useState<string>("dark");
 
   useEffect(() => {
     setActivity(getActivity());
     setStreak(getCurrentStreak());
+    setThemeState(getTheme());
+    const onThemeChange = () => setThemeState(getTheme());
+    window.addEventListener(THEME_CHANGE_EVENT, onThemeChange);
+    return () => window.removeEventListener(THEME_CHANGE_EVENT, onThemeChange);
   }, []);
+
+  const heatLevels = HEAT_LEVELS_BY_THEME[theme] ?? HEAT_LEVELS_BY_THEME.dark;
 
   const days = useMemo(() => {
     const arr: { date: string; count: number }[] = [];
@@ -77,7 +90,7 @@ function ActivityHeatmap() {
                 key={d.date}
                 title={`${d.date}: ${d.count} jawaban`}
                 className="h-3 w-3 rounded-sm"
-                style={{ backgroundColor: HEAT_LEVELS[heatLevel(d.count)] }}
+                style={{ backgroundColor: heatLevels[heatLevel(d.count)] }}
               />
             ))}
           </div>
@@ -293,9 +306,12 @@ export default function Library({ onStart }: LibraryProps) {
 
   return (
     <div>
-      <h1 className="mb-2 text-2xl font-semibold tracking-tight">
-        Kuis Bahasa Jepang
-      </h1>
+      <div className="mb-2 flex items-start justify-between gap-3">
+        <h1 className="font-heading text-2xl font-semibold tracking-tight">
+          Kuis Bahasa Jepang
+        </h1>
+        <ThemeToggle />
+      </div>
       <p className="mb-6 text-sm leading-relaxed text-muted">
         Deck kuismu tersimpan otomatis di browser ini — tidak perlu upload
         ulang tiap sesi. Semuanya berjalan lokal, tanpa akun, tanpa server.

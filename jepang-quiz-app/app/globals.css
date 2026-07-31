@@ -2,6 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Dark (default) — OLED-ish neutrals + indigo accent. */
+:root,
+[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg: 12 12 13;
+  --color-surface: 20 20 22;
+  --color-surface2: 28 28 31;
+  --color-border: 42 42 46;
+  --color-muted: 147 147 156;
+  --color-fg: 244 244 245;
+  --color-accent: 129 140 248;
+  --color-accent-fg: 12 12 13;
+  --color-success: 52 211 153;
+  --color-danger: 248 113 113;
+  --font-heading: var(--font-sans);
+}
+
+/* Traditional Japanese Art / Cultural Vector — washi paper, ai-iro indigo,
+   shu-iro vermillion, sumi ink. Noto Serif JP for headings (see layout.tsx). */
+[data-theme="traditional"] {
+  color-scheme: light;
+  --color-bg: 245 237 220;
+  --color-surface: 255 251 242;
+  --color-surface2: 239 227 200;
+  --color-border: 201 182 133;
+  --color-muted: 92 80 64;
+  --color-fg: 43 38 32;
+  --color-accent: 42 75 124;
+  --color-accent-fg: 250 246 234;
+  --color-success: 53 87 63;
+  --color-danger: 184 57 14;
+  --font-heading: var(--font-serif-jp);
+}
+
 body {
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
 }
@@ -25,6 +59,13 @@ rt {
   display: none;
 }
 
+.jword {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 3px;
+  text-decoration-color: theme("colors.muted");
+}
 .jword .trans {
   display: none;
   color: theme("colors.accent");
@@ -32,10 +73,14 @@ rt {
 .jword .orig {
   display: inline;
 }
-.jword:hover .trans {
+/* Hover untuk desktop, .revealed (di-toggle via klik/tap di JS) untuk
+   perangkat sentuh yang tidak punya hover state. */
+.jword:hover .trans,
+.jword.revealed .trans {
   display: inline;
 }
-.jword:hover .orig {
+.jword:hover .orig,
+.jword.revealed .orig {
   display: none;
 }
 
@@ -48,4 +93,10 @@ span.dw {
 ruby.dictword:hover,
 span.dw:hover {
   background: theme("colors.surface2");
+}
+
+/* Aksen khas tema tradisional: garis shu-iro (vermillion) tipis di atas
+   tiap panel/kartu, mengingatkan pada bingkai cetak kayu (ukiyo-e). */
+[data-theme="traditional"] .card-panel {
+  border-top: 3px solid rgb(var(--color-danger) / 0.55);
 }
