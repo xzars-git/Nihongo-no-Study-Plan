@@ -18,7 +18,15 @@ export default function Home() {
   const [session, setSession] = useState<Session | null>(null);
 
   function startSession(deck: StoredDeck, mode: SessionMode) {
-    const questions = buildSession(deck.id, deck.quizData.questions, mode);
+    // Dosage cap (40) only applies to "due" review sessions; other modes
+    // ("all", "wrong", "learn") should use the full pool, not be silently
+    // truncated.
+    const questions = buildSession(
+      deck.id,
+      deck.quizData.questions,
+      mode,
+      mode === "due" ? undefined : 0
+    );
     setSession((prev) => ({
       deck,
       mode,

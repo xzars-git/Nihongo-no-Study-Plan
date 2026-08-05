@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Kuis Bahasa Jepang</title>
+<style>
+  :root {
+    --bg: #1b1b1a;
+    --surface: #242423;
+    --surface2: #2d2d2c;
+    --border: #3a3a38;
+    --text: #ececea;
+    --text-muted: #a3a29e;
+    --accent: #7f9cf5;
+    --success-bg: #1e3a2a;
+    --success-border: #3a7a4f;
+    --success-text: #7fd99a;
+    --danger-bg: #3a1e1e;
+    --danger-border: #7a3a3a;
+    --danger-text: #d97f7f;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "Segoe UI", Meiryo, sans-serif;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 4rem;
+    line-height: 1.7;
+  }
+  h1 { font-size: 20px; font-weight: 600; margin-bottom: 0.25rem; }
+  .subtitle { color: var(--text-muted); font-size: 13px; margin-bottom: 1.5rem; }
+  .loader {
+    border: 1.5px dashed var(--border);
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .loader input[type=file] { display: none; }
+  .loader label {
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .loader label:hover { background: #37372f; }
+  .loader p { color: var(--text-muted); font-size: 13px; margin-top: 0.75rem; }
+  .hidden { display: none !important; }
+  .progress-row { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--text-muted); margin-bottom: 0.75rem; }
+  .bar-track { height: 5px; background: var(--surface2); border-radius: 4px; overflow: hidden; margin-bottom: 1.5rem; }
+  .bar-fill { height: 100%; background: var(--accent); transition: width 0.25s; }
+  .tag { display: inline-block; font-size: 12px; padding: 3px 10px; border-radius: 6px; background: #2a3352; color: #a9bdf7; margin-bottom: 14px; }
+  .prompt { font-size: 18px; font-weight: 500; margin: 0 0 0.5rem; line-height: 2; }
+  .hoverhint { font-size: 11px; color: var(--text-muted); margin: -0.5rem 0 1rem; }
+  ruby { ruby-align: center; }
+  rt { font-size: 11px; color: var(--text-muted); }
+  .jword { border-bottom: 1px dotted var(--text-muted); cursor: help; position: relative; }
+  .jword .trans { display: none; color: #a9bdf7; }
+  .jword .orig { display: inline; }
+  .jword:hover .trans { display: inline; }
+  .jword:hover .orig { display: none; }
+  .options { display: flex; flex-direction: column; gap: 8px; }
+  .opt-btn {
+    text-align: left;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    font-size: 14px;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .opt-btn:hover { border-color: var(--accent); }
+  .opt-btn.correct { background: var(--success-bg); border-color: var(--success-border); color: var(--success-text); }
+  .opt-btn.wrong { background: var(--danger-bg); border-color: var(--danger-border); color: var(--danger-text); }
+  .input-row { display: flex; gap: 8px; margin-bottom: 6px; }
+  input[type=text], textarea {
+    flex: 1;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text);
+    font-size: 14px;
+    font-family: inherit;
+  }
+  textarea { min-height: 90px; resize: vertical; width: 100%; }
+  .conv-preview { font-size: 13px; color: var(--text-muted); min-height: 18px; margin-bottom: 0.5rem; }
+  button.action {
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text);
+    cursor: pointer;
+    font-size: 14px;
+    font-family: inherit;
+  }
+  button.action:hover { border-color: var(--accent); }
+  button.action:disabled { opacity: 0.35; cursor: default; }
+  .feedback { margin-top: 1rem; font-size: 13px; color: var(--text-muted); min-height: 20px; }
+  .nav-row { display: flex; gap: 8px; margin-top: 1rem; }
+  .nav-row button.action { flex: 1; }
+  .summary { text-align: center; padding: 1rem 0; }
+  .summary .label { font-size: 13px; color: var(--text-muted); margin-bottom: 4px; }
+  .summary .score { font-size: 34px; font-weight: 600; margin-bottom: 1.5rem; }
+  .wrong-list { text-align: left; display: flex; flex-direction: column; gap: 8px; max-height: 420px; overflow-y: auto; }
+  .wrong-item { display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border-radius: 8px; background: var(--surface2); font-size: 13px; }
+  .wrong-item .x { color: var(--danger-text); flex-shrink: 0; }
+  .free-note { font-size: 12px; color: var(--text-muted); margin-top: 6px; }
+  .paste-row { margin-top: 1rem; text-align: left; }
+  .paste-row summary { cursor: pointer; font-size: 13px; color: var(--text-muted); }
+  .paste-row textarea { min-height: 140px; margin-top: 0.5rem; font-family: monospace; font-size: 12px; }
+  ruby.dictword, span.dw { cursor: pointer; }
+  ruby.dictword:hover, span.dw:hover { background: #2a3352; border-radius: 4px; }
+  .speak-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    color: var(--text);
+    cursor: pointer;
+    font-size: 13px;
+    font-family: inherit;
+    margin-bottom: 0.75rem;
+  }
+  .speak-btn:hover { border-color: var(--accent); }
+  #dictPopup {
+    position: fixed;
+    max-width: 280px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 13px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    z-index: 1000;
+  }
+  #dictPopup .dw { font-size: 16px; font-weight: 600; margin-bottom: 2px; }
+  #dictPopup .dr { color: var(--text-muted); font-size: 12px; margin-bottom: 6px; }
+  #dictPopup .dm { color: #a9bdf7; font-weight: 500; margin-bottom: 4px; }
+  #dictPopup .dn { color: var(--text-muted); font-size: 12px; }
+  #dictPopup .close { position: absolute; top: 6px; right: 8px; cursor: pointer; color: var(--text-muted); }
+</style>
+</head>
+<body>
+
+<h1>Kuis Bahasa Jepang</h1>
+<p class="subtitle">Load file JSON soal, lalu kerjakan. Kata bergaris putus-putus bisa di-hover, dan kanji ber-furigana bisa DIKLIK untuk lihat kamus singkat.</p>
+
+<div class="loader" id="loaderBox">
+  <label for="fileInput">Pilih file JSON soal</label>
+  <input type="file" id="fileInput" accept="application/json">
+  <p id="loaderStatus">Belum ada file dimuat.</p>
+  <details class="paste-row">
+    <summary>Atau paste JSON langsung di sini</summary>
+    <textarea id="pasteArea" placeholder="Tempel isi JSON di sini..."></textarea>
+    <div style="margin-top:0.5rem;">
+      <button type="button" class="action" id="pasteLoadBtn">Muat dari paste</button>
+    </div>
+  </details>
+</div>
+
+<div id="quizRoot" class="hidden"></div>
+<div id="dictPopup" class="hidden"></div>
+
+<script>
+const ROMAJI_MAP = {"kya":"きゃ","kyu":"きゅ","kyo":"きょ","sha":"しゃ","shu":"しゅ","sho":"しょ","cha":"ちゃ","chu":"ちゅ","cho":"ちょ","nya":"にゃ","nyu":"にゅ","nyo":"にょ","hya":"ひゃ","hyu":"ひゅ","hyo":"ひょ","mya":"みゃ","myu":"みゅ","myo":"みょ","rya":"りゃ","ryu":"りゅ","ryo":"りょ","gya":"ぎゃ","gyu":"ぎゅ","gyo":"ぎょ","ja":"じゃ","ju":"じゅ","jo":"じょ","bya":"びゃ","byu":"びゅ","byo":"びょ","pya":"ぴゃ","pyu":"ぴゅ","pyo":"ぴょ","shi":"し","chi":"ち","tsu":"つ","fu":"ふ","a":"あ","i":"い","u":"う","e":"え","o":"お","ka":"か","ki":"き","ku":"く","ke":"け","ko":"こ","sa":"さ","su":"す","se":"せ","so":"そ","ta":"た","te":"て","to":"と","na":"な","ni":"に","nu":"ぬ","ne":"ね","no":"の","ha":"は","hi":"ひ","he":"へ","ho":"ほ","ma":"ま","mi":"み","mu":"む","me":"め","mo":"も","ya":"や","yu":"ゆ","yo":"よ","ra":"ら","ri":"り","ru":"る","re":"れ","ro":"ろ","wa":"わ","wo":"を","n":"ん","ga":"が","gi":"ぎ","gu":"ぐ","ge":"げ","go":"ご","za":"ざ","ji":"じ","zu":"ず","ze":"ぜ","zo":"ぞ","da":"だ","di":"ぢ","du":"づ","de":"で","do":"ど","ba":"ば","bi":"び","bu":"ぶ","be":"べ","bo":"ぼ","pa":"ぱ","pi":"ぴ","pu":"ぷ","pe":"ぺ","po":"ぽ"};
+
+function romajiToHiragana(input) {
+  let s = (input || "").toLowerCase().trim();
+  s = s.replace(/n'/g, "n");
+  let out = "";
+  let i = 0;
+  while (i < s.length) {
+    const c = s[i];
+    if (c === "-" || c === " ") { i += 1; continue; }
+    if (/[bcdfghjklmpqrstvwxyz]/.test(c) && s[i + 1] === c && c !== "n") { out += "っ"; i += 1; continue; }
+    let matched = false;
+    for (let len = 3; len >= 1; len--) {
+      const chunk = s.substr(i, len);
+      if (ROMAJI_MAP[chunk]) { out += ROMAJI_MAP[chunk]; i += len; matched = true; break; }
+    }
+    if (!matched) { out += c; i += 1; }
+  }
+  return out;
+}
+function looksLikeRomaji(s) { return /^[a-zA-Z'\-\s]+$/.test(s || ""); }
+function toHiraganaSafe(s) {
+  s = (s || "").trim();
+  if (!s) return "";
+  if (looksLikeRomaji(s)) return romajiToHiragana(s);
+  return s;
+}
+
+let QUESTIONS = [];
+let quizTitle = "Kuis";
+let DICTIONARY = {};
+let current = 0;
+let score = 0;
+let freeCount = 0;
+const results = [];
+
+function loadQuizData(data) {
+  QUESTIONS = data.questions || [];
+  quizTitle = data.title || "Kuis";
+  DICTIONARY = data.dictionary || {};
+  current = 0; score = 0; freeCount = 0; results.length = 0;
+  document.getElementById("loaderStatus").textContent = "Dimuat: " + quizTitle + " (" + QUESTIONS.length + " soal)";
+  document.getElementById("quizRoot").classList.remove("hidden");
+  render();
+}
+
+document.getElementById("fileInput").addEventListener("change", function (e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function (evt) {
+    try {
+      loadQuizData(JSON.parse(evt.target.result));
+    } catch (err) {
+      document.getElementById("loaderStatus").textContent = "Gagal baca file JSON: " + err.message;
+    }
+  };
+  reader.readAsText(file);
+});
+
+document.getElementById("pasteLoadBtn").addEventListener("click", function () {
+  const raw = document.getElementById("pasteArea").value;
+  try {
+    loadQuizData(JSON.parse(raw));
+  } catch (err) {
+    document.getElementById("loaderStatus").textContent = "Gagal baca JSON yang dipaste: " + err.message;
+  }
+});
+
+function lookupDict(word) {
+  if (DICTIONARY[word]) return DICTIONARY[word];
+  return null;
+}
+
+function showDictPopup(word, x, y) {
+  const popup = document.getElementById("dictPopup");
+  const entry = lookupDict(word);
+  let html = "<span class=\"close\" id=\"dictClose\">&#10005;</span>";
+  html += "<div class=\"dw\">" + word + "</div>";
+  if (entry) {
+    if (entry.reading) html += "<div class=\"dr\">" + entry.reading + "</div>";
+    if (entry.meaning) html += "<div class=\"dm\">" + entry.meaning + "</div>";
+    if (entry.note) html += "<div class=\"dn\">" + entry.note + "</div>";
+  } else {
+    html += "<div class=\"dn\">Tidak ada di kamus soal ini.</div>";
+  }
+  popup.innerHTML = html;
+  popup.classList.remove("hidden");
+  const popW = 280;
+  let left = x + 10;
+  if (left + popW > window.innerWidth) left = window.innerWidth - popW - 20;
+  popup.style.left = left + "px";
+  popup.style.top = (y + 12) + "px";
+  document.getElementById("dictClose").addEventListener("click", function (ev) {
+    ev.stopPropagation();
+    popup.classList.add("hidden");
+  });
+}
+
+document.addEventListener("click", function (e) {
+  const popup = document.getElementById("dictPopup");
+  if (!popup.classList.contains("hidden") && !popup.contains(e.target) && !e.target.closest("ruby")) {
+    popup.classList.add("hidden");
+  }
+});
+
+function bindDictClicks(container) {
+  const rubies = container.querySelectorAll("ruby");
+  rubies.forEach(function (rb) {
+    rb.classList.add("dictword");
+    let baseText = "";
+    rb.childNodes.forEach(function (node) {
+      if (node.nodeType === 3) baseText += node.textContent;
+    });
+    baseText = baseText.trim();
+    rb.addEventListener("click", function (e) {
+      e.stopPropagation();
+      showDictPopup(baseText, e.clientX, e.clientY);
+    });
+  });
+  const plain = container.querySelectorAll("span.dw");
+  plain.forEach(function (sp) {
+    const word = sp.textContent.trim();
+    sp.addEventListener("click", function (e) {
+      e.stopPropagation();
+      showDictPopup(word, e.clientX, e.clientY);
+    });
+  });
+}
+
+function speakJapanese(text) {
+  if (!window.speechSynthesis) { alert("Browser ini tidak mendukung text-to-speech."); return; }
+  let clean = text;
+  clean = clean.replace(/<rt>[\s\S]*?<\/rt>/g, "");
+  clean = clean.replace(/<span class="trans">[\s\S]*?<\/span>/g, "");
+  clean = clean.replace(/<[^>]*>/g, "");
+  clean = clean.replace(/_+/g, "、");
+  clean = clean.replace(/\s+/g, " ").trim();
+  const utter = new SpeechSynthesisUtterance(clean);
+  utter.lang = "ja-JP";
+  utter.rate = 0.85;
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(utter);
+}
+
+function render() {
+  const root = document.getElementById("quizRoot");
+  if (current >= QUESTIONS.length) { renderSummary(root); return; }
+  const q = QUESTIONS[current];
+  root.innerHTML = "";
+
+  const progress = document.createElement("div");
+  progress.className = "progress-row";
+  progress.innerHTML = "<span>Soal " + (current + 1) + " / " + QUESTIONS.length + "</span><span>Skor: " + score + "</span>";
+  root.appendChild(progress);
+
+  const barTrack = document.createElement("div");
+  barTrack.className = "bar-track";
+  const barFill = document.createElement("div");
+  barFill.className = "bar-fill";
+  barFill.style.width = (current / QUESTIONS.length * 100) + "%";
+  barTrack.appendChild(barFill);
+  root.appendChild(barTrack);
+
+  if (q.tag) {
+    const tag = document.createElement("span");
+    tag.className = "tag";
+    tag.textContent = q.tag;
+    root.appendChild(tag);
+  }
+
+  const speakBtn = document.createElement("button");
+  speakBtn.type = "button";
+  speakBtn.className = "speak-btn";
+  speakBtn.innerHTML = "&#128266; Dengar";
+  speakBtn.addEventListener("click", function () { speakJapanese(q.promptHtml || q.prompt || ""); });
+  root.appendChild(speakBtn);
+
+  const prompt = document.createElement("p");
+  prompt.className = "prompt";
+  prompt.innerHTML = q.promptHtml || q.prompt || "";
+  root.appendChild(prompt);
+  bindDictClicks(prompt);
+
+  const hasJword = (q.promptHtml || "").indexOf("jword") > -1;
+  const hasRuby = (q.promptHtml || "").indexOf("<ruby") > -1;
+  const hasDw = (q.promptHtml || "").indexOf("class=\"dw\"") > -1;
+  if (hasJword || hasRuby || hasDw) {
+    const hint = document.createElement("p");
+    hint.className = "hoverhint";
+    hint.textContent = (hasJword ? "Hover kata bergaris putus-putus untuk lihat artinya. " : "") + ((hasRuby || hasDw) ? "Klik kata (kanji atau katakana) untuk lihat kamus singkat." : "");
+    root.appendChild(hint);
+  }
+
+  const bodyWrap = document.createElement("div");
+  bodyWrap.id = "bodyWrap";
+  root.appendChild(bodyWrap);
+
+  const feedback = document.createElement("div");
+  feedback.className = "feedback";
+  feedback.id = "feedback";
+  root.appendChild(feedback);
+
+  const navRow = document.createElement("div");
+  navRow.className = "nav-row";
+  const nextBtn = document.createElement("button");
+  nextBtn.type = "button";
+  nextBtn.className = "action";
+  nextBtn.id = "nextBtn";
+  nextBtn.textContent = current === QUESTIONS.length - 1 ? "Lihat hasil" : "Lanjut";
+  nextBtn.disabled = q.type !== "free";
+  nextBtn.addEventListener("click", function () { current += 1; render(); });
+  navRow.appendChild(nextBtn);
+  root.appendChild(navRow);
+
+  if (q.type === "mc") renderMC(bodyWrap, q);
+  else if (q.type === "short") renderShort(bodyWrap, q);
+  else if (q.type === "free") renderFree(bodyWrap, q);
+}
+
+function lockAndScore(correct, picked, right, q) {
+  if (correct) score += 1;
+  results.push({ tag: q.tag || "", promptHtml: q.promptHtml || q.prompt || "", correct: correct, picked: picked, right: right });
+  document.getElementById("feedback").textContent = q.explain || "";
+  const nextBtn = document.getElementById("nextBtn");
+  nextBtn.disabled = false;
+}
+
+function renderMC(wrap, q) {
+  const opts = document.createElement("div");
+  opts.className = "options";
+  (q.options || []).forEach(function (opt, i) {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "opt-btn";
+    btn.textContent = opt;
+    btn.addEventListener("click", function () {
+      if (opts.dataset.answered) return;
+      opts.dataset.answered = "1";
+      const correct = i === q.answer;
+      Array.from(opts.children).forEach(function (b, idx) {
+        b.style.cursor = "default";
+        if (idx === q.answer) b.classList.add("correct");
+        else if (idx === i) b.classList.add("wrong");
+      });
+      lockAndScore(correct, opt, q.options[q.answer], q);
+    });
+    opts.appendChild(btn);
+  });
+  wrap.appendChild(opts);
+}
+
+function renderShort(wrap, q) {
+  const row = document.createElement("div");
+  row.className = "input-row";
+  const input = document.createElement("input");
+  input.type = "text";
+  input.placeholder = "Ketik romaji atau hiragana";
+  const preview = document.createElement("div");
+  preview.className = "conv-preview";
+  input.addEventListener("input", function () {
+    const conv = toHiraganaSafe(input.value);
+    preview.textContent = conv ? ("-> " + conv) : "";
+  });
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "action";
+  btn.textContent = "Cek";
+  const submit = function () {
+    if (row.dataset.answered) return;
+    row.dataset.answered = "1";
+    input.disabled = true;
+    btn.disabled = true;
+    const raw = (input.value || "").trim().toLowerCase();
+    const converted = toHiraganaSafe(input.value).trim();
+    const accepted = q.accepted || [];
+    const acceptedRomaji = q.acceptedRomaji || [];
+    const hiraganaMatch = accepted.some(function (a) { return a.trim() === converted || a.trim().toLowerCase() === raw; });
+    const romajiMatch = acceptedRomaji.some(function (r) { return r.toLowerCase() === raw; });
+    const correct = hiraganaMatch || romajiMatch;
+    input.style.borderColor = correct ? "var(--success-border)" : "var(--danger-border)";
+    lockAndScore(correct, (input.value || "(kosong)") + (converted ? " (" + converted + ")" : ""), accepted[0] || "", q);
+  };
+  btn.addEventListener("click", submit);
+  input.addEventListener("keydown", function (e) { if (e.key === "Enter") submit(); });
+  row.appendChild(input);
+  row.appendChild(btn);
+  wrap.appendChild(row);
+  wrap.appendChild(preview);
+}
+
+function renderFree(wrap, q) {
+  const textarea = document.createElement("textarea");
+  textarea.placeholder = "Tulis jawabanmu bebas di sini (romaji/hiragana campur boleh)...";
+  wrap.appendChild(textarea);
+  const note = document.createElement("p");
+  note.className = "free-note";
+  note.textContent = "Soal ini tidak dinilai otomatis — jawaban bebas, nanti dicek manual/dibahas terpisah.";
+  wrap.appendChild(note);
+  const nextBtn = document.getElementById("nextBtn");
+  nextBtn.disabled = false;
+  textarea.addEventListener("input", function () {
+    results[freeCount] = results[freeCount] || {};
+  });
+  nextBtn.addEventListener("click", function () {
+    results.push({ tag: q.tag || "", promptHtml: q.promptHtml || q.prompt || "", correct: true, picked: textarea.value, right: "(output bebas)", isFree: true });
+    freeCount += 1;
+  }, { once: true });
+}
+
+function renderSummary(root) {
+  root.innerHTML = "";
+  const wrap = document.createElement("div");
+  wrap.className = "summary";
+
+  const label = document.createElement("p");
+  label.className = "label";
+  label.textContent = "Skor " + quizTitle;
+  wrap.appendChild(label);
+
+  const gradable = results.filter(function (r) { return !r.isFree; });
+  const scoreEl = document.createElement("p");
+  scoreEl.className = "score";
+  scoreEl.textContent = score + " / " + gradable.length;
+  wrap.appendChild(scoreEl);
+
+  const wrongs = results.filter(function (r) { return !r.correct; });
+  const list = document.createElement("div");
+  list.className = "wrong-list";
+  if (wrongs.length === 0) {
+    const p = document.createElement("p");
+    p.style.color = "var(--text-muted)";
+    p.textContent = "Semua benar (di luar soal output bebas).";
+    list.appendChild(p);
+  } else {
+    wrongs.forEach(function (r) {
+      const row = document.createElement("div");
+      row.className = "wrong-item";
+      row.innerHTML = "<span class=\"x\">&#10005;</span><div><span style=\"color:var(--text-muted)\">" + r.tag + "</span><br>" + r.promptHtml + "<br><span style=\"color:var(--danger-text)\">Jawabanmu: " + r.picked + "</span> - <span style=\"color:var(--success-text)\">Benar: " + r.right + "</span></div>";
+      list.appendChild(row);
+    });
+  }
+  wrap.appendChild(list);
+
+  const freeAnswers = results.filter(function (r) { return r.isFree; });
+  if (freeAnswers.length > 0) {
+    const freeLabel = document.createElement("p");
+    freeLabel.className = "label";
+    freeLabel.style.marginTop = "1.5rem";
+    freeLabel.textContent = "Jawaban output bebas (copy-paste ke chat buat dikoreksi):";
+    wrap.appendChild(freeLabel);
+    const freeBox = document.createElement("textarea");
+    freeBox.readOnly = true;
+    freeBox.style.minHeight = "150px";
+    freeBox.value = freeAnswers.map(function (r, i) { return (i + 1) + ". " + r.picked; }).join("\n\n");
+    wrap.appendChild(freeBox);
+  }
+
+  const resetBtn = document.createElement("button");
+  resetBtn.type = "button";
+  resetBtn.className = "action";
+  resetBtn.style.marginTop = "1.5rem";
+  resetBtn.textContent = "Muat file lain";
+  resetBtn.addEventListener("click", function () {
+    document.getElementById("quizRoot").classList.add("hidden");
+    document.getElementById("loaderStatus").textContent = "Belum ada file dimuat.";
+    document.getElementById("fileInput").value = "";
+  });
+  wrap.appendChild(resetBtn);
+
+  root.appendChild(wrap);
+}
+</script>
+</body>
+</html>

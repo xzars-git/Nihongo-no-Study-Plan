@@ -56,6 +56,10 @@ export function deleteDeck(id: string) {
     DECKS_KEY,
     decks.filter((d) => d.id !== id)
   );
+  if (typeof window !== "undefined") {
+    window.localStorage.removeItem(`jqa:srs:${id}`);
+    window.localStorage.removeItem(`jqa:lastwrong:${id}`);
+  }
 }
 
 // ---------- Backup / restore ----------

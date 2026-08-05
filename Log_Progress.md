@@ -44,6 +44,28 @@ Update file ini di akhir tiap sesi. Struktur: tanggal sesi → apa yang dipelaja
 - ちかてつ (kereta bawah tanah) vs でんしゃ (kereta listrik umum) — sempat ketuker.
 - デパート (department store) vs レストラン (restoran) — sempat ketuker sekali.
 - きます (datang) vs かえります (pulang) vs おわります (selesai), せんしゅう vs らいしゅう vs さらいしゅう vs せんせんしゅう, り vs る dalam hiragana — sebelumnya lemah, tapi di kuis-kuis terbaru sudah konsisten benar, kemungkinan sudah cukup solid (tetap worth dicek sesekali).
+- これ/それ/あれ (dan この/その/あの) arah — MASIH SANGAT SERING SALAH, muncul lagi di latihan produksi kalimat bebas (bukan cuma kuis pilihan ganda): konsisten pakai この/kono padahal maksudnya その/sono ("itu, dekat lawan bicara") — terjadi 3x berturut dalam satu sesi latihan monolog/susun kalimat. Butuh drill khusus terpisah, bukan cuma direview sambil lalu.
+- に vs で untuk lokasi — baru ketahuan (latihan susun kalimat): pakai に buat lokasi kata kerja aksi (寝ます, 食べます, dll — seharusnya で), padahal に cuma untuk lokasi keberadaan (います/あります) atau tujuan. Perlu direview.
+- からい (karai=pedas) vs きらい (kirai=benci/tidak suka) — baru ketahuan, tertukar karena bunyi mirip.
+- 会います butuh partikel に (bukan で/を) — sempat salah pakai で.
+- Lupa ubah kata kerja ke bentuk lampau meskipun ada penanda waktu lampau (kinou, senshuu, dll) di kalimat yang sama — pola error klasik pemula, muncul di latihan susun kalimat bebas. Masih berulang di sesi latihan susun-kalimat Bab1-10 (lebih dari sekali), jadi ini prioritas tinggi buat direview lagi.
+- これ/それ/あれ・この/その/あの: sempat solid di drill khusus (skor akhir 9/10, konsisten benar di 10 soal terakhir), TAPI balik ketuker lagi begitu dipakai dalam kalimat majemuk/lebih kompleks (latihan susun kalimat Bab1-10). Kesimpulan: konsepnya sudah dipahami, tapi belum otomatis di bawah beban kognitif tinggi — butuh lebih banyak paparan dalam konteks kalimat panjang, bukan cuma soal terisolasi.
+- Partikel が sering ketinggalan sebelum arimasu/imasu (pola keberadaan) dan sebelum kata sifat perasaan seperti 好き/嫌い (harusnya kata bendanya ditandai が, bukan を) — muncul berulang di latihan susun kalimat.
+- Kata kerja gerak (ikimasu dll) butuh partikel に/へ untuk tujuan, sempat salah pakai を (shigoto o ikimasu, harusnya shigoto ni ikimasu).
+- Lupa partikel は buat menandai topik kalimat (contoh: "watashi no chichi hatarakimasu" tanpa wa).
+- Kosakata waktu 来年 (rainen=tahun depan) vs 来週 (raishuu=minggu depan) sempat ketuker sekali.
+- 木 (ki=pohon) vs 本 (hon=buku) sempat ketuker sekali (bukan karena mirip bunyi, kemungkinan buru-buru).
+- Lokasi "tinggal dekat X" butuh 近く (chikaku) — sempat salah bilang "tinggal DI X" (eki ni sunde imasu) padahal maksudnya dekat stasiun. UPDATE: sudah membaik, di sesi susul (25 soal) pola "no chikaku ni" sudah benar dipakai.
+
+**Sesi 25 kalimat tambahan (Bab1-10 review, 2026-08-04) — temuan baru:**
+- **じゃありません vs は + verb negatif**: じゃありません itu khusus negasi です (kata benda/na-adjective: "X wa Y ja arimasen"), BUKAN pasangan untuk menegasikan あります/います. Existence verbs punya negasi sendiri (ありません/いません). Salah ketik "ni ja arimasen" berulang beberapa kali — polanya harusnya "ni (wa) arimasen/imasen", は opsional tapi natural dipakai buat kontras ("ada di sini, tapi TIDAK ada di situ").
+- Kata kerja (bukan kata sifat) jangan ditempelin です langsung setelah bentuk lampau — contoh salah: "tsukareta desu", "okimashita desu kara". Bentuk sopan kata kerja lampau itu sendiri sudah cukup (疲れました, 起きました), tidak perlu tambahan です.
+- ちこく (chikoku = telat ke acara/janji) vs 遅く起きます (osoku okimasu = bangun kesiangan) — dua konsep beda, sempat ketuker.
+- Counter buat benda panjang/silinder (pohon, pensil, botol) itu 本 (hon), bukan つ (hitotsu/futatsu) — sempat pakai counter umum yang salah buat pohon (harusnya 二本の木, bukan 二つの木).
+- 日曜日 (nichiyoubi) sempat kepotong jadi "youbi" doang (bukan nama hari yang valid) saat nyusun "tiap hari Minggu" — harusnya 毎週日曜日に.
+- Kecenderungan ngilangin kata sifat pelengkap (atsui, ookii, dll) pas kalimatnya udah kompleks — bukan salah paham, lebih ke ke-skip karena beban kalimat udah banyak. Wajar, tapi worth dicatat sebagai pola under-cognitive-load.
+- Ejaan loanword: suteki (bukan tsuteki), horaa/ホラー (bukan hararu) — typo minor.
+- Progress positif: partikel が di depan 好き/嫌い sekarang udah konsisten benar di banyak kalimat berturut-turut (sebelumnya sering ketinggalan). Lampau dengan penanda waktu (kinou, senshuu) juga sudah jauh lebih konsisten.
 
 **Kotoba baru yang awalnya benar-benar tidak diketahui (dari 250 soal), sekarang sudah mulai dikenali:** にちようび, ゆうびんきょく, かいぎしつ, だいがく, ちか, きっさてん, きょうだい, りょうしん, ゆうべ, けんきゅうしゃ, てちょう — sebagian besar sudah bisa dijawab benar di sesi ulangan, kecuali りょうしん yang masih perlu banyak pengulangan.
 
@@ -191,6 +213,10 @@ User upload materi lengkap Pelajaran 7 MNN: kosakata (きります/おくりま�
 - Setelah 100 kartu exposure, user diberi retrieval CHECK ringan-mudah (50 soal, bukan berat): skor 45/50 (~90%) — validasi kuat bahwa metode "exposure cepat via kartu pemandu" efektif untuk situasi keterbatasan waktu, TANPA perlu baca detail tiap halaman textbook satu-satu.
 - Kesalahan retrieval: い-adjective+KB sempat dikira perlu な juga (padahal cuma な-adjective yang butuh, aturan penting jangan sampai overgeneralisasi), いそがしい ejaan kepeleset, アルバイト dikira kerja penuh waktu (padahal paruh waktu), おくります(kirim)/きります(potong) sempat ketuker, dan satu salah baca soal (bukan salah konsep) soal pola どんな.
 - **Pelajaran metode besar:** kalau user dalam kondisi keterbatasan waktu/nggak bisa baca materi detail, "kartu pemandu pola" (exposure murni tanpa skor dulu, followed by retrieval check ringan) adalah pendekatan yang sangat efektif — dipertimbangkan jadi opsi standar ke depan kalau situasi serupa terulang.
+- Retrieval check ringan lanjutan (50 soal, mudah): 45/50 (~90%). Salah: い-adjective+KB sempat dikira butuh な juga (overgeneralisasi dari aturan な-adjective), いそがしい ejaan kepeleset, アルバイト dikira kerja penuh waktu, おくります/きります sempat ketuker, 1 salah baca soal どんな (bukan salah konsep).
+- Dibuatkan skrip percakapan panjang (~80 baris) mencakup Bab 1-9 sekaligus untuk shadowing, dengan porsi Bab 7-9 sengaja lebih banyak (~30% lebih) sesuai permintaan user.
+- Sesi test "bagian A + bagian B": bagian A (35 soal review Bab1-9, direvisi 2x supaya SEMUA soal berbasis kalimat penuh, bukan tanya definisi/fakta langsung — permintaan eksplisit user) hasil 27/35 (~77%). Beberapa salah cuma kurang lengkap konjugasi (かし→かします, すき→すきです, konsepnya udah benar). **Yang genuinely PERSISTEN lintas banyak sesi berbeda hari, butuh drill khusus terpisah ke depan:** これ/それ/あれ arah (それ dikira dekat penanya, padahal dekat lawan bicara), あげます/もらいます arah (kasih vs terima masih tertukar), はつか(tanggal 20)/はたち(umur 20 tahun) — kesalahan berulang persis sama kayak sesi sebelumnya, パンチ(pelubang)/ホッチキス(staples) — juga berulang persis.
+- Bagian B (15 prompt output bebas, mencakup pola Bab7-9: ませんか, あげます/もらいます, かします, もう, な-adjective, い-adjective, が kontras, とても/あまり, すき+が, から) — belum dikerjakan user, menunggu hasil buat dikoreksi manual.
 
 ---
 
@@ -213,6 +239,8 @@ User sudah kasih daftar lengkap dari textbook asli. Kata-kata dari Bab 1-5 yang 
 - [ ] **Tahap 5 (belum selesai):** kanji baru dari Bab 6 (食,飲,見,聞,読,書,買,撮,会,何,朝,昼,晩,卵,肉,魚,野菜,果物,茶,手紙,写真,店,庭) — studi + retrieval.
 - [ ] Review lanjutan: ませんか vs ましょう (konstruksi ajakan vs jawaban setuju masih tertukar), na-adjective+な+です (きれいな〜です), すき/だいすき pakai が bukan を.
 - [ ] Kalau tahap 5 dan grammar di atas udah solid, pertimbangkan mulai Bab 7 MNN dan/atau kanji Hari 1 kelompok 3 (perlu upload materi, Claude belum bisa buka PDF kanji langsung).
+- [ ] **PRIORITAS BARU:** drill khusus terpisah (bukan cuma nyempil di kuis campuran) untuk 4 kesalahan yang PERSISTEN lintas banyak sesi: これ/それ/あれ arah, あげます/もらいます arah, はつか/はたち, パンチ/ホッチキス. Pertimbangkan pakai pendekatan narasi/dialog kontekstual (metode poin 10.7) karena drilling kuis biasa terbukti belum cukup buat 4 hal ini.
+- [ ] Lanjutkan Bagian B (15 prompt output bebas Bab7-9) yang belum dikerjakan user.
 
 ---
 
